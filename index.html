@@ -142,6 +142,13 @@
         from { opacity: 0; transform: translateY(10px); }
         to { opacity: 1; transform: translateY(0); }
     }
+
+    /* Responsive adjustments for mobile screens */
+    @media (max-width: 768px) {
+        .main-heading-container {
+            display: none;
+        }
+    }
 </style>
 <body>
     <div id="toast" role="status" aria-live="polite"></div>

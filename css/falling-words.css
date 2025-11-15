@@ -191,10 +191,46 @@ body {
     transform: scale(1.05);
 }
 
+/* Mobile-only top controls */
+.mobile-controls {
+    display: none; /* Hidden by default on desktop */
+    justify-content: center;
+    gap: 15px;
+    padding: 10px;
+    background: var(--panel-bg);
+    border-bottom: 1px solid var(--border-color);
+}
+.mobile-controls .btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+}
+
+/* Hide mobile controls by default */
+#mobile-restart-btn,
+#mobile-pause-btn {
+    display: none;
+}
+
+/* On desktop, hide the main mobile start button */
+@media (min-width: 993px) {
+    #start-game-btn-main {
+        display: none;
+    }
+}
+
 /* Responsive Styles for Falling Words Game */
 @media (max-width: 992px) {
     .game-container {
         flex-direction: column;
+    }
+
+    .mobile-controls {
+        display: flex; /* Show on mobile */
+    }
+
+    /* Hide the desktop start button on mobile */
+    #start-game-btn-desktop {
+        display: none;
     }
 
     .left-panel, .right-panel, .game-center {

@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const overlayTitle = document.getElementById('overlay-title');
     const overlayText = document.getElementById('overlay-text');
     const startGameBtnMain = document.getElementById('start-game-btn-main');
+    const startGameBtnDesktop = document.getElementById('start-game-btn-desktop');
     const totalWordsDisplay = document.getElementById('total-words-display');
     const wpmChartCanvas = document.getElementById('wpm-chart');
     const explosionSound = new Audio('/media/finish.mp3'); // Sound for correct word
@@ -17,6 +18,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const highScoresTableBody = document.querySelector('#highScoresTable tbody');
     const correctSound = new Audio('/media/key-press-263640.mp3');
     const incorrectSound = new Audio('/media/wrong-47985.mp3');
+    const mobileRestartBtn = document.getElementById('mobile-restart-btn');
+    const mobilePauseBtn = document.getElementById('mobile-pause-btn');
 
     const easyWords = [ "apple", "beach", "chair", "dance", "eagle", "fairy", "giant", "happy", "igloo", "joker",
     "knife", "lemon", "mango", "night", "ocean", "piano", "queen", "river", "sweet", "tiger",
@@ -96,11 +99,18 @@ document.addEventListener('DOMContentLoaded', () => {
         displayHighScores();
         overlayTitle.classList.remove('game-over-animated'); // Reset animation class
         
+        mobilePauseBtn.disabled = true;
+        mobilePauseBtn.innerHTML = '<i class="fas fa-pause"></i> Pause'; // Reset button text
         // Ensure the overlay is visible and shows the initial message
         gameOverlay.classList.remove('hidden');
         overlayTitle.textContent = 'Falling Words';
-        overlayText.innerHTML = 'Type the words before they hit the bottom.<br>Press SPACE to start!';
-        startGameBtnMain.textContent = 'Start Game'; // Reset main button text
+        overlayText.innerHTML = 'Type the words before they hit the bottom.<br>Press SPACE to start!'; 
+        startGameBtnDesktop.textContent = 'Start Game'; // Reset main button text
+
+        // Mobile button visibility
+        startGameBtnMain.style.display = 'inline-block';
+        mobileRestartBtn.style.display = 'none';
+        mobilePauseBtn.style.display = 'none';
     }
 
     function updateDisplays() {
@@ -442,9 +452,19 @@ document.addEventListener('DOMContentLoaded', () => {
         initializeGame();
         gameActive = true;
         gameOverlay.classList.add('hidden');
-        gameInput.focus();
+        // Use a small timeout to ensure the keyboard opens reliably on mobile after the overlay is hidden.
+        setTimeout(() => {
+            gameInput.focus();
+        }, 100);
         gameStartTime = Date.now();
         gameInput.disabled = false;
+
+        // Mobile button visibility
+        startGameBtnMain.style.display = 'none';
+        mobileRestartBtn.style.display = 'inline-block';
+        mobilePauseBtn.style.display = 'inline-block';
+
+        mobilePauseBtn.disabled = false;
 
         wordInterval = setInterval(createWord, wordSpawnRate);
         gameLoopInterval = setInterval(gameLoop, 20);
@@ -464,6 +484,7 @@ document.addEventListener('DOMContentLoaded', () => {
         overlayTitle.textContent = 'Paused';
         overlayText.innerHTML = 'Press SPACE to resume.';
         gameOverlay.classList.remove('hidden');
+        mobilePauseBtn.innerHTML = '<i class="fas fa-play"></i> Resume';
         gameInput.disabled = true;
     }
 
@@ -474,6 +495,7 @@ document.addEventListener('DOMContentLoaded', () => {
         gameOverlay.classList.add('hidden');
         gameInput.disabled = false;
         gameInput.focus();
+        mobilePauseBtn.innerHTML = '<i class="fas fa-pause"></i> Pause';
 
         wordInterval = setInterval(createWord, wordSpawnRate);
         gameLoopInterval = setInterval(gameLoop, 20);
@@ -507,9 +529,10 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="game-over-quote">"${randomQuote}"</div>
         `;
 
-        startGameBtnMain.textContent = 'Play Again';
+        startGameBtnDesktop.textContent = 'Play Again';
         gameOverlay.classList.remove('hidden');
         gameInput.disabled = true; // Disable input to prevent accidental restart
+        mobilePauseBtn.disabled = true;
         saveAndDisplayScores(score, finalWPM, finalAccuracy);
     }
 
@@ -582,7 +605,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Event Listeners
     startGameBtnMain.addEventListener('click', startGame);
+    startGameBtnDesktop.addEventListener('click', startGame);
     clearHighScoresBtn.addEventListener('click', clearHighScores);
+    mobileRestartBtn.addEventListener('click', () => {
+        // The restart button should always bring the game to a fresh state and then start it.
+        gameActive = false; // Allow startGame to run
+        startGame();
+    });
+    mobilePauseBtn.addEventListener('click', () => {
+        if (!gameActive) return;
+
+        if (isPaused) {
+            resumeGame();
+        } else {
+            pauseGame();
+        }
+    });
 
     document.addEventListener('keydown', (e) => {
         // Handle Ctrl + R for restart

@@ -239,11 +239,68 @@
         .game-container {
             flex: 1;
         }
+
+        /* Responsive styles for mobile devices */
+        @media (max-width: 992px) {
+            .game-container {
+                flex-direction: column;
+            }
+            .game-panel {
+                flex-direction: row;
+                justify-content: space-around;
+                width: 100%;
+                padding: 10px;
+                order: 1; /* Move side panels down */
+            }
+            .game-center {
+                width: 100%;
+                min-height: 50vh; /* Ensure it has enough height */
+                order: 0; /* Keep game box on top */
+            }
+            .left-panel {
+                order: 1; /* Move to top */
+            }
+            .right-panel {
+                order: 2; /* Move below left panel */
+            }
+            .stat-item h3 {
+                font-size: 0.9rem;
+            }
+            .stat-value {
+                font-size: 1.8rem;
+            }
+            #wpm-chart {
+                max-height: 100px !important;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .game-panel {
+                flex-wrap: wrap; /* Allow stats to wrap on very small screens */
+            }
+            .stat-item {
+                flex-basis: 45%; /* Two items per row */
+                margin-bottom: 10px;
+            }
+            .stat-value {
+                font-size: 1.5rem;
+            }
+            #overlay-text{
+                display: none; /* Hide overlay text on very small screens */
+            }
+        }
     </style>
 </head>
 <body>
     <!-- ================= HEADER ================= -->
     <header role="banner"></header>
+
+    <!-- Mobile-only controls -->
+    <div class="mobile-controls">
+        <button id="start-game-btn-main" class="btn"><i class="fas fa-play"></i> Start Game</button>
+        <button id="mobile-restart-btn" class="btn"><i class="fas fa-rotate-right"></i> Restart</button>
+        <button id="mobile-pause-btn" class="btn"><i class="fas fa-pause"></i> Pause</button> 
+    </div>
 
     <!-- Main Game Content -->
     <main class="game-container" role="main">
@@ -264,7 +321,7 @@
             <div id="game-overlay" class="game-overlay">
                 <h2 id="overlay-title">Falling Words</h2>
                 <p id="overlay-text">Type the words before they hit the bottom.<br>Press SPACE to start!</p>
-                <button id="start-game-btn-main" class="btn">Start Game</button>
+                <button id="start-game-btn-desktop" class="btn">Start Game</button>
             </div>
             <!-- Falling words will appear here -->
         </section>
