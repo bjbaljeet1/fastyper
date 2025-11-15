@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Zone - Fastyper</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="media/logo.png">
+    <meta name="description" content="Play exciting typing games at Fastyper's Game Zone. Challenge your speed and accuracy in fun new ways.">
+    <meta name="keywords" content="typing games, fastyper games, typing challenge, speed typing game, accuracy game">
+    <meta name="author" content="Fastyper">
+    <meta property="og:title" content="Game Zone - Fastyper">
+    <meta property="og:description" content="Play exciting typing games at Fastyper's Game Zone. Challenge your speed and accuracy in fun new ways.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://fastyper.com/games.html">
+    <meta property="og:image" content="https://fastyper.com/media/logo.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Game Zone - Fastyper">
+    <meta name="twitter:description" content="Play exciting typing games at Fastyper's Game Zone. Challenge your speed and accuracy in fun new ways.">
+    <meta name="twitter:image" content="https://fastyper.com/media/logo.png">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#1a1a1a">
+    <meta name="google-adsense-account" content="ca-pub-2117663743397755">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2117663743397755"
+     crossorigin="anonymous"></script>
+    <!-- Google tag (gtag.js) - Google Analytics -->
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C32RRG82PM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C32RRG82PM');
+</script>
+    <link rel="canonical" href="https://fastyper.com/games.html" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/games.css">
+    <style>
+        .game-btn:disabled {
+            background: #2a2a3a;
+            border: 1px solid #444;
+            border-bottom: 4px solid #1a1a2a;
+            color: #777;
+            cursor: not-allowed;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            transform: translateY(0); /* Ensure it doesn't have a hover/active state */
+            opacity: 0.8;
+        }
+
+        .game-btn {
+            background: linear-gradient(145deg, #0077b6, #005a8d);
+            border: 1px solid var(--border-color-strong);
+            border-bottom: 4px solid #004a70; /* Darker bottom border for 3D effect */
+            color: var(--text-light);
+            transition: all 0.15s ease-out;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .game-btn:hover:not(:disabled) {
+            background: linear-gradient(145deg, #0088cc, #006aa3);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 170, 255, 0.4);
+        }
+
+        .game-btn:active:not(:disabled) {
+            transform: translateY(1px);
+            border-bottom-width: 2px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <!-- ================= HEADER ================= -->
+    <header role="banner"></header>
+
+    <!-- Main Content -->
+    <main role="main" class="game-zone-container">
+        <h1><i class="fas fa-gamepad"></i> Game Zone</h1>
+        <p class="subtitle">Challenge your skills with these fun and interactive typing games!</p>
+
+        <div class="game-cards-container">
+            <div class="game-card">
+                <i class="fas fa-flag-checkered card-icon"></i>
+                <h3>Typing Racer</h3>
+                <p>Race against opponents by typing words accurately and quickly. (Coming Soon!)</p>
+                <button class="game-btn" disabled><i class="fas fa-clock"></i> Coming Soon</button>
+            </div>
+            <div class="game-card">
+                <i class="fas fa-meteor card-icon"></i>
+                <h3>Falling Words</h3>
+                <p>Type the words before they fall off the screen. A classic test of speed and reaction!</p>
+                <a href="falling-words.html">
+                    <button class="game-btn"><i class="fas fa-play"></i> Play Now</button>
+                </a>
+            </div>
+            <!-- Add more game cards here in the future -->
+        </div>
+
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="footer" role="contentinfo"></footer>
+
+    <script src="fastscript/common.js"></script>
+</body>
+</html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Falling Words - Fastyper Game Zone</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap">
+    <link href="https://fonts.cdnfonts.com/css/ds-digital" rel="stylesheet">
+    <link rel="icon" type="image/png" href="media/logo.png">
+    <meta name="description" content="Play Falling Words on Fastyper. Type the words before they hit the bottom to test your speed and reaction time.">
+    <meta name="keywords" content="typing game, falling words, fastyper game, speed typing game">
+    <meta name="author" content="Fastyper">
+    <meta property="og:title" content="Falling Words - Fastyper Game Zone">
+    <meta property="og:description" content="Play Falling Words on Fastyper. Type the words before they hit the bottom to test your speed and reaction time.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://fastyper.com/falling-words.html">
+    <meta property="og:image" content="https://fastyper.com/media/logo.png">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#1a1a1a">
+     <meta name="google-adsense-account" content="ca-pub-2117663743397755">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2117663743397755"
+     crossorigin="anonymous"></script>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C32RRG82PM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C32RRG82PM');
+</script>
+    <link rel="canonical" href="https://fastyper.com/falling-words.html" />
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/falling-words.css">
+    <style>
+        /* 3D effect for main panels */
+        .game-panel, .game-center {
+            border: 1px solid var(--border-color);
+            border-bottom: 4px solid rgba(0, 0, 0, 0.4);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3), inset 0 1px 2px rgba(255, 255, 255, 0.1);
+            background: var(--game-card-bg, rgba(0, 20, 40, 0.6));
+            border-radius: var(--radius-large);
+        }
+        .game-center {
+            padding: 40px 10px; /* Add horizontal padding */
+            box-sizing: border-box; /* Ensure padding is included in the width */
+        }
+        .stat-value{
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-color-accent);
+            font-family: 'DS-Digital', sans-serif;
+        }
+
+
+        /* 3D effect for buttons */
+        .btn {
+            background: linear-gradient(145deg, #0077b6, #005a8d);
+            border: 1px solid var(--border-color-strong);
+            border-bottom: 4px solid #004a70;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: all 0.15s ease-out;
+        }
+        .btn:hover:not(:disabled) {
+            background: linear-gradient(145deg, #0088cc, #006aa3);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 170, 255, 0.4);
+        }
+        .btn:active:not(:disabled) {
+            transform: translateY(1px);
+            border-bottom-width: 2px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Game Over Animation Styles */
+        @keyframes gameOverAnimate {
+            from { transform: scale(0.5) rotate(-10deg); opacity: 0; }
+            to   { transform: scale(1) rotate(0deg); opacity: 1; }
+        }
+
+        @keyframes fadeInStats {
+            from { opacity: 0; transform: translateY(20px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        #overlay-title.game-over-animated {
+            animation: gameOverAnimate 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+
+        .final-stats {
+            animation: fadeInStats 0.8s ease-out 0.5s forwards;
+            opacity: 0; /* Start hidden */
+        }
+
+        .game-over-quote {
+            font-style: italic;
+            margin-top: 20px;
+            animation: fadeInStats 0.8s ease-out 0.8s forwards;
+            opacity: 0; /* Start hidden */
+        }
+
+        /* New Gaming Styles for Falling Words */
+        @keyframes spawn {
+            from { transform: scale(0.8); opacity: 0; }
+            to   { transform: scale(1); opacity: 1; }
+        }
+
+        .falling-word.word-spawn {
+            animation: spawn 0.3s ease-out forwards;
+        }
+
+        .falling-word.active {
+            /* Add a glow to the active word */
+            text-shadow: 0 0 12px var(--accent-color), 0 0 20px var(--accent-color-light);
+            transform: scale(1.05);
+            z-index: 10;
+        }
+
+        @keyframes screenShake {
+            0%, 100% { transform: translateX(0); }
+            20%, 60% { transform: translateX(-5px); }
+            40%, 80% { transform: translateX(5px); }
+        }
+
+        body.screen-shake {
+            animation: screenShake 0.3s ease-in-out;
+        }
+
+        /* New Explosion Particle Effect */
+        .explosion-particle {
+            position: absolute;
+            pointer-events: none;
+            font-weight: bold;
+            z-index: 15;
+            /* Start with the base color and glow */
+            color: var(--accent-color-light);
+            text-shadow: 0 0 5px #fff, 0 0 10px var(--accent-color-light), 0 0 15px var(--accent-color);
+            /* Prepare for animation */
+            opacity: 1;
+            transform: translate(0, 0) scale(1);
+            animation: explode-and-fade 1s cubic-bezier(0.1, 0.8, 0.25, 1) forwards;
+        }
+
+        @keyframes explode-and-fade {
+            0% {
+                opacity: 1;
+                transform: translate(0, 0) scale(1.2) rotate(0deg);
+                /* A subtle rainbow glow at the start */
+                text-shadow: 0 0 8px #fff, 0 0 15px #ffcc00, 0 0 25px #ff00ff, 0 0 35px #00ffff;
+            }
+            100% {
+                opacity: 0;
+                /* Use CSS variables for dynamic end positions */
+                transform: translate(var(--x), var(--y)) scale(0.5) rotate(var(--rot));
+                /* Fade out the glow */
+                text-shadow: 0 0 2px #fff, 0 0 5px var(--accent-color-light);
+            }
+        }
+
+        /* Score Shake Effect */
+        @keyframes scoreShake {
+            0%, 100% { transform: translateX(0); }
+            20%, 60% { transform: translateX(-5px); }
+            40%, 80% { transform: translateX(5px); }
+        }
+
+        .score-shake {
+            animation: scoreShake 0.3s ease-in-out;
+            color: var(--error-color, #ff4d4d); /* Optional: change color to red during shake */
+        }
+
+    </style>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .game-container {
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+    <!-- ================= HEADER ================= -->
+    <header role="banner"></header>
+
+    <!-- Main Game Content -->
+    <main class="game-container" role="main">
+        <aside class="game-panel left-panel">
+            <div class="stat-item">
+                <h3>Lives</h3>
+                <div id="lives-container" class="stat-display">
+                    <!-- Lives will be populated by JS -->
+                </div>
+            </div>
+            <div class="stat-item">
+                <h3>Live WPM</h3>
+                <canvas id="wpm-chart" style="max-height: 150px;"></canvas>
+            </div>
+        </aside>
+
+        <section id="word-box" class="game-center">
+            <div id="game-overlay" class="game-overlay">
+                <h2 id="overlay-title">Falling Words</h2>
+                <p id="overlay-text">Type the words before they hit the bottom.<br>Press SPACE to start!</p>
+                <button id="start-game-btn-main" class="btn">Start Game</button>
+            </div>
+            <!-- Falling words will appear here -->
+        </section>
+
+        <aside class="game-panel right-panel">
+            <div class="stat-item">
+                <h3>Score</h3>
+                <div id="score-display" class="stat-value">0</div>
+            </div>
+            <div class="stat-item">
+                <h3>Time</h3>
+                <div id="time-display" class="stat-value">00:00</div>
+            </div>
+            <div class="stat-item">
+                <h3>WPM</h3>
+                <div id="wpm-display" class="stat-value">0</div>
+            </div>
+            <div class="stat-item">
+                <h3>Accuracy</h3>
+                <div id="accuracy-display-val" class="stat-value">100%</div>
+            </div>
+            <div class="stat-item">
+                <h3>Total Words</h3>
+                <div id="total-words-display" class="stat-value">0</div>
+            </div>
+        </aside>
+    </main>
+
+    <input type="text" id="game-input" class="game-input" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+
+    <!-- Footer Section -->
+    <footer class="footer" role="contentinfo"></footer>
+
+    <script src="fastscript/falling-words.js"></script>
+    <script src="fastscript/common.js"></script>
+</body>
+</html>

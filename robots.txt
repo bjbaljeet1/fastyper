@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /components/
+
+Sitemap: https://www.fastyper.com/sitemap.xml

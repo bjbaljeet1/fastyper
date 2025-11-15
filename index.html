@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <!-- Enhanced SEO Meta Tags -->
+    <meta name="description" content="Fastyper is a lightning-fast typing test game with WPM tracking, ghost mode challenges, keyboard visuals, and leaderboard. Level up your typing skills now!">
+    <meta name="keywords" content="fastyper, fast typer, typing test, online typing test, WPM test, typing speed test, type test, typing game, typing challenge, words per minute test">
+    <meta name="author" content="BJ Baljeet">
+    <link rel="canonical" href="https://www.fastyper.com/" />
+    <meta property="og:title" content="Fastyper - Free Online Typing Speed Tests & Typing Games">
+    <meta property="og:description" content="Test and improve your typing speed with Fastyper's interactive typing challenges and detailed performance analytics.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.fastyper.com/">
+    <meta property="og:image" content="https://fastyper.com/media/logo.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- Additional SEO Features -->
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    <meta name="theme-color" content="#00ccff">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" href="media/logo.png">
+    <link rel="manifest" href="manifest.json">
+    <meta property="og:site_name" content="Fastyper">
+    <meta property="og:locale" content="en-US">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Fastyper - Free Online Typing Speed Tests & Typing Games">
+    <meta name="twitter:description" content="Test and improve your typing speed with Fastyper's interactive typing challenges and detailed performance analytics.">
+    <meta name="twitter:image" content="https://fastyper.com/media/logo.png">
+    <meta name="twitter:site" content="@fastyper_">
+    <link rel="icon" type="image/png" href="media/logo.png">
+    <meta name="instagram:card" content="summary">
+    <meta name="instagram:site" content="@_fastyper_">
+    <meta name="instagram:title" content="Fastyper - Free Online Typing Speed Tests & Typing Games">
+    <meta name="instagram:description" content="Test and improve your typing speed with Fastyper's interactive typing challenges and detailed performance analytics.">
+    <meta name="instagram:image" content="https://fastyper.com/media/logo.png">
+    <!-- Structured Data (Schema.org) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Fastyper",
+      "url": "https://www.fastyper.com/",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://www.fastyper.com/index.html",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Fastyper",
+        "operatingSystem": "Web",
+        "applicationCategory": "GameApplication"
+    }
+    </script>
+    <title>Fastyper - Free Online Typing Speed Tests & Typing Games</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap">
+    <link href="https://fonts.cdnfonts.com/css/ds-digital" rel="stylesheet">
+    <meta name="google-adsense-account" content="ca-pub-2117663743397755">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2117663743397755"
+     crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="css/style.css">
+    <!-- Google tag (gtag.js) - Google Analytics -->
+   <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C32RRG82PM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C32RRG82PM');
+</script>
+  <link rel="stylesheet" href="css/result.css">
+  <link rel="stylesheet" href="css/footer.css">
+</head>
+<style>
+    .main-heading-container {
+        background: linear-gradient(145deg, rgba(0, 20, 40, 0.7), rgba(0, 10, 30, 0.5));
+        border: 1px solid var(--border-color, rgba(0, 204, 255, 0.3));
+        border-bottom: 3px solid rgba(0, 0, 0, 0.4);
+        border-radius: var(--radius-medium, 10px);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3), inset 0 1px 2px rgba(255, 255, 255, 0.1);
+        padding: 1rem; /* Decreased padding */
+        text-align: center;
+        margin-bottom: 1rem; /* Decreased margin */
+        overflow: hidden; /* To contain the animation */
+    }
+
+    .main-heading-container h1 {
+        font-size: 1.3rem; /* Decreased font size */
+        color: var(--text-light, #f0f0f0);
+        margin-bottom: 0.5rem;
+        font-family: 'Orbitron', sans-serif; /* Use a more "tech" font */
+        display: inline-block; /* Required for width animation */
+        position: relative;
+        white-space: nowrap; /* Prevent line breaks during animation */
+        overflow: hidden; /* Hide text until revealed */
+        border-right: 3px solid var(--accent-color, #00ccff); /* The cursor */
+        animation: 
+            typing 4s steps(30, end) infinite,
+            blink-caret .75s step-end infinite;
+    }
+
+    /* Typing effect */
+    @keyframes typing {
+        from { width: 0 }
+        to { width: 100% }
+    }
+
+    /* The typewriter cursor effect */
+    @keyframes blink-caret {
+        from, to { border-color: transparent }
+        50% { border-color: var(--accent-color, #00ccff); }
+    }
+
+    .main-heading-container p {
+        font-size: 0.9rem; /* Decreased font size */
+        color: var(--text-secondary, #a0a0a0);
+        opacity: 0;
+        animation: fadeInText 1s ease-out 1s forwards; /* Fade in after h1 animation starts */
+    }
+
+    @keyframes fadeInText {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+</style>
+<body>
+    <div id="toast" role="status" aria-live="polite"></div>
+    <!-- ================= HEADER ================= -->
+     <header role="banner"></header>
+
+
+    <!-- ================= End ================= -->
+    <main class="container" role="main">
+
+        <aside class="left">
+            <div class="timer">
+                <div id="timer">30</div>
+            </div>
+            <section class="modes" aria-labelledby="modes-heading">
+                <h5>Modes</h5>
+                <div class="mode-row">
+                    <button class="button" id="easyMode">Easy</button>
+                    <button class="button" id="mediumMode">Medium</button>
+                    <button class="button" id="hardMode">Hard</button>
+                    <button class="button" id="ghostMode">Ghost</button>
+                </div>
+            </section>
+            
+            <div class="controls">
+                <div class="timer-controls">
+                    <button id="decreaseTimer" class="button2" title="Decrease Time" aria-label="Decrease Time"><i class="fa-solid fa-chevron-down"></i></button>
+                    <button id="increaseTimer" class="button2" title="Increase Time" aria-label="Increase Time"><i class="fa-solid fa-chevron-up"></i></button>
+                    <button id="restartTest" class="button2" title="Restart Test (ctrl + R)" aria-label="Restart Test"><i class="fa-solid fa-rotate-right"></i></button>
+                     <button class="button2" id="soundToggle" title="Sound Control" aria-label="Toggle Sound"><i class="fas fa-volume-up"></i></button>
+                      <button id="recordButton" class="button2" title="Record Screen (Alt+R)" aria-label="Record Screen">
+                        <i class="fas fa-video"></i>
+                    </button>
+                </div>
+            </div>
+                
+                <div class="timeOptions">
+                    <label>
+                        <input type="radio" id="quickOption" name="timeOption" value="30" checked>
+                        Quick (30s)
+                    </label>
+                    <label>
+                        <input type="radio" id="standardOption" name="timeOption" value="60">
+                        Standard (60s)
+                    </label>
+                    <label>
+                        <input type="radio" id="marathonOption" name="timeOption" value="120">
+                        Marathon (120s)
+                    </label>
+                </div>
+
+                <div class="recorder-options">
+                    <h5><i class="fas fa-video"></i> Recording</h5>
+                    <div class="option-row">
+                        <label for="recordingQuality">Quality</label>
+                        <select id="recordingQuality" class="button-like-select">
+                            <option value="hd">HD (720p)</option>
+                            <option value="fhd" selected>FHD (1080p)</option>
+                            <option value="4k">4K (2160p)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="ghost-controls" id="ghostControls" style="display: none;">
+                    <label>
+                        Blink Speed
+                        <span id="blinkSpeedValue">1.0x</span>
+                    </label>
+                    <input type="range" id="blinkSpeed" min="0.5" max="5" step="0.1" value="1">
+                </div>
+            </aside>
+        
+        <section class="center">
+            <div class="main-heading-container">
+                <h1>The Ultimate Online Typing Test</h1>
+                <p>Challenge your speed, accuracy, and endurance. Start typing the words below to begin!</p>
+            </div>
+            <div class="stringbox" id="stringBox"></div>
+            <!-----------------------virtual keyboard-------------------->
+            <div class="virtual_keyboard" aria-label="Virtual Keyboard">
+                <!-- Keyboard rows remain the same as before -->
+                <div class="row">
+                    <button class="key" data-key="`" data-shift="~">
+                        <span class="shift-char">~</span>
+                        <span class="base-char">`</span>
+                    </button>
+                    <button class="key" data-key="1" data-shift="!">
+                        <span class="shift-char">!</span>
+                        <span class="base-char">1</span>
+                    </button>
+                    <button class="key" data-key="2" data-shift="@">
+                        <span class="shift-char">@</span>
+                        <span class="base-char">2</span>
+                    </button>
+                    <button class="key" data-key="3" data-shift="#">
+                        <span class="shift-char">#</span>
+                        <span class="base-char">3</span>
+                    </button>
+                    <button class="key" data-key="4" data-shift="$">
+                        <span class="shift-char">$</span>
+                        <span class="base-char">4</span>
+                    </button>
+                    <button class="key" data-key="5" data-shift="%">
+                        <span class="shift-char">%</span>
+                        <span class="base-char">5</span>
+                    </button>
+                    <button class="key" data-key="6" data-shift="^">
+                        <span class="shift-char">^</span>
+                        <span class="base-char">6</span>
+                    </button>
+                    <button class="key" data-key="7" data-shift="&">
+                        <span class="shift-char">&</span>
+                        <span class="base-char">7</span>
+                    </button>
+                    <button class="key" data-key="8" data-shift="*">
+                        <span class="shift-char">*</span>
+                        <span class="base-char">8</span>
+                    </button>
+                    <button class="key" data-key="9" data-shift="(">
+                        <span class="shift-char">(</span>
+                        <span class="base-char">9</span>
+                    </button>
+                    <button class="key" data-key="0" data-shift=")">
+                        <span class="shift-char">)</span>
+                        <span class="base-char">0</span>
+                    </button>
+                    <button class="key" data-key="-" data-shift="_">
+                        <span class="shift-char">_</span> 
+                        <span class="base-char">-</span>
+                </button>   
+                    <button class="key" data-key="=" data-shift="+">
+                        <span class="shift-char">+</span>
+                        <span class="base-char">=</span>
+                    </button>
+                    <button class="key special-key extra-wide-key" data-key="backspace"><i class="fas fa-backspace"></i></button>
+                </div>
+                <div class="row">
+                    <button class="key special-key wide-key" data-key="tab"><i class='fas fa-exchange-alt'></i>
+                      <!--  <span class="shift-char"><i class="fa-solid fa-arrow-left"></i></span>
+                        <span class="base-char"><i class="fa-solid fa-arrow-right"></i></span>-->
+                    </button>
+                    <button class="key" data-key="q">Q</button>
+                    <button class="key" data-key="w">W</button>
+                    <button class="key" data-key="e">E</button>
+                    <button class="key" data-key="r">R</button>
+                    <button class="key" data-key="t">T</button>
+                    <button class="key" data-key="y">Y</button>
+                    <button class="key" data-key="u">U</button>
+                    <button class="key" data-key="i">I</button>
+                    <button class="key" data-key="o">O</button>
+                    <button class="key" data-key="p">P</button>
+                    <button class="key" data-key="[" data-shift="{">
+                        <span class="shift-char">{</span>
+                        <span class="base-char">[</span>
+                    </button>
+                    <button class="key" data-key="]" data-shift="}">
+                        <span class="shift-char">}</span>
+                        <span class="base-char">]</span>
+                    </button>
+                    <button class="key" data-key="\" data-shift="|">
+                        <span class="shift-char">|</span>
+                        <span class="base-char">\</span>
+                    </button>
+                </div>
+                <div class="row">
+                    <button class="key special-key wide-key" data-key="capslock">Caps Lock</button>
+                    <button class="key" data-key="a">A</button>
+                    <button class="key" data-key="s">S</button>
+                    <button class="key" data-key="d">D</button>
+                    <button class="key" data-key="f">F</button>
+                    <button class="key" data-key="g">G</button>
+                    <button class="key" data-key="h">H</button>
+                    <button class="key" data-key="j">J</button>
+                    <button class="key" data-key="k">K</button>
+                    <button class="key" data-key="l">L</button>
+                    <button class="key" data-key=";" data-shift=":">
+                        <span class="shift-char">:</span>
+                        <span class="base-char">;</span>
+                    </button>
+                    <button class="key" data-key="'" data-shift='"'>
+                        <span class="shift-char">"</span>
+                        <span class="base-char">'</span>
+                    </button>
+                    <button class="key special-key wide-key" data-key="enter">Enter</button>
+                </div>
+                <div class="row">
+                    <button class="key wide-key" data-key="shift" data-side="left">Shift</button>
+                    <button class="key" data-key="z">Z</button>
+                    <button class="key" data-key="x">X</button>
+                    <button class="key" data-key="c">C</button>
+                    <button class="key" data-key="v">V</button>
+                    <button class="key" data-key="b">B</button>
+                    <button class="key" data-key="n">N</button>
+                    <button class="key" data-key="m">M</button>
+                    <button class="key" data-key="," data-shift="<">
+                        <span class="shift-char"><</span>
+                        <span class="base-char">,</span>
+                    </button>
+                    <button class="key" data-key="." data-shift=">">
+                        <span class="shift-char">></span>
+                        <span class="base-char">.</span>
+                    </button>
+                    <button class="key" data-key="/" data-shift="?">
+                        <span class="shift-char">?</span>
+                        <span class="base-char">/</span>
+                    </button>
+                    <button class="key wide-key" data-key="shift" data-side="right">Shift</button>
+                </div>
+                <div class="row">
+                    <button class="key space-key" data-key="space">Space</button>
+                </div>
+            </div>
+        </section>
+        
+        <aside class="right">
+            <div class="statss">
+                <div class="stat-item">
+                    <div class="stat-valuee" id="wpm">0</div>
+                    <div class="stat-label">Words Per Minute</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-valuee" id="accuracy">0%</div>
+                    <div class="stat-label">Accuracy</div>
+                </div>
+            </div>
+            <button class="button" id="showShortcutsBtn" style="width: 100%; margin-top: 10px;">
+                <i class="fas fa-keyboard"></i> &nbsp; Shortcuts
+            </button>
+        </aside>
+        
+    </main>
+
+    <!-- New Result Container -->
+    <section class="result-container" aria-label="Typing Test Results">
+        <div class="rs-cen responsive-panel">
+        <h2>Time Up!</h2>
+        <div class="result-statTop">
+                <div class="result-stat-valuetTop" id="result-wpm">0</div>
+                <div class="result-stat-label">Words Per Minute</div>
+            </div>
+        <div class="result-stats">
+            <div class="result-stat">
+                <div class="result-stat-value" id="result-accuracy">0%</div>
+                <div class="result-stat-label">Accuracy</div>
+            </div>
+             <div class="result-stat">
+                <div class="result-stat-value" id="result-TotalWords">0</div>
+                <div class="result-stat-label">Total Words</div>
+        </div>
+            <div class="result-stat">
+                <div class="result-stat-value" id="result-correct">0</div>
+                <div class="result-stat-label">Correct Words</div>
+            </div>
+            <div class="result-stat">
+                <div class="result-stat-value" id="result-WrongWords">0</div>
+                <div class="result-stat-label">Wrong Words</div>
+            </div>
+            <div class="result-stat">
+                <div class="result-stat-value" id="result-mistakes">0</div>
+                <div class="result-stat-label"> Character Mistakes</div>
+            </div>
+            <div class="result-stat">
+                <div class="result-stat-value" id="result-CorrectCharacter">0</div>
+                <div class="result-stat-label">Correct Characters</div>
+            </div>
+             
+        </div>
+        <div class="timing-stats">
+  <h3>Keystroke Timing</h3>
+  <table class="timing-table">
+    <tr class="timing-item">
+      <td>Average Key Interval:</td>
+      <td id="averageInterval">0ms</td>
+    </tr>
+    <tr class="timing-item">
+      <td>Fastest Key Press:</td>
+      <td id="fastestKeyPress">0ms</td>
+    </tr>
+    <tr class="timing-item">
+      <td>Slowest Key Press:</td>
+      <td id="slowestKeyPress">0ms</td>
+    </tr>
+  </table>
+</div>
+
+
+          <div class="fastest-words">
+          <h3>Fastest Words</h3>
+          <div id="fastestWordsContainer" class="word-list"></div>
+        </div>
+
+         <div class="graph-container">
+          <h3>Performance History</h3>
+          <canvas id="resultsChart"></canvas>
+          <div class="chart-legend">
+            <div class="legend-item">
+              <div class="legend-color" style="background: #00ccff;"></div>
+              <span>WPM</span>
+            </div>
+            <div class="legend-item">
+              <div class="legend-color" style="background: #4cff4c;"></div>
+              <span>Accuracy</span>
+            </div>
+          </div>
+        </div>
+
+        
+        <div id="topResultsContainer" class="topResultsContainer">
+          <h3>Your Top Results</h3>
+          <table id="topResultsTable">
+            <thead>
+              <tr>
+                <th>Rank</th>
+                <th>WPM</th>
+                <th>Accuracy</th>
+                <th>Mode</th>
+                <th>Date & Time</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+    </div>
+<button class="btnn" id="restartFromResults" aria-label="Restart Test"><i class="fa-solid fa-rotate-right"></i></button> 
+           <button class="btnn" id="deleteHistory" aria-label="Delete History"> <i class="fa-solid fa-trash"></i></button>
+    </section>
+  
+    <!-- Shortcut Keys Popup -->
+    <div id="shortcut-popup" class="shortcut-popup">
+        <button id="closeShortcutsBtn" class="shortcut-close-btn" aria-label="Close Shortcuts">&times;</button>
+        <h4><i class="fas fa-keyboard"></i> Keyboard Shortcuts</h4>
+        <div class="shortcut-table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Key</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Ctrl + R </td><td>Restart Test</td></tr>
+                    <tr><td>↑ Arrow</td><td>Increase Time (+10s)</td></tr>
+                    <tr><td>↓ Arrow</td><td>Decrease Time (-10s)</td></tr>
+                    <tr><td>Ctrl + E</td><td>Easy Mode</td></tr>
+                    <tr><td>Ctrl + M</td><td>Medium Mode</td></tr>
+                    <tr><td>Ctrl + H</td><td>Hard Mode</td></tr>
+                    <tr><td>Ctrl + G</td><td>Toggle Ghost Mode</td></tr>
+                    <tr><td>Ctrl + T</td><td>Toggle Sound</td></tr>
+                    <tr><td>Ctrl + Q</td><td>For Quick (30s)</td></tr>
+                    <tr><td>Ctrl + S</td><td>For Standard (60s)</td></tr>
+                    <tr><td>Ctrl + O</td><td>for Marathon (120s)</td></tr>
+                    <tr><td>Ctrl + C</td><td>Clear All History</td></tr>
+                    <tr><td>Alt + R</td><td>Start Screen Record</td></tr>
+                    <tr><td>Alt + S</td><td>Stop Screen Record</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    
+
+        <!-- Footer Section -->
+    <footer class="footer" role="contentinfo"></footer>
+</body>
+<script src="fastscript/script.js"></script>
+<script src="fastscript/mob.js"></script>
+<script src="fastscript/keyboard.js"></script>
+<script src="fastscript/screenrecorder.js"></script>
+<script src="fastscript/common.js"></script>
+<script>
+    // This ensures the "How to Use" link is added to the dynamically loaded footer.
+    document.addEventListener('footerLoaded', function() {
+        const quickLinksList = document.querySelector('.footer-column .footer-links');
+        if (quickLinksList) {
+            const newLinkItem = document.createElement('li');
+            newLinkItem.innerHTML = `<a href="how-to-use-fastyper.html" title="Learn how to use Fastyper">How to Use</a>`;
+            // Add it after the "Home" link if it exists, otherwise at the beginning.
+            const homeLink = quickLinksList.querySelector('a[href="/"]');
+            if (homeLink && homeLink.parentElement) {
+                homeLink.parentElement.insertAdjacentElement('afterend', newLinkItem);
+            } else {
+                quickLinksList.prepend(newLinkItem);
+            }
+        }
+    });
+</script>
+</html>

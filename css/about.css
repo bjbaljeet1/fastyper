@@ -1,0 +1,76 @@
+.about-container {
+    padding: 20px;
+    flex: 1;
+}
+
+.about-content {
+    max-width: 900px;
+    margin: 0 auto;
+    background: linear-gradient(145deg, rgba(0, 10, 20, 0.5), rgba(0, 40, 70, 0.5));
+    padding: 20px 30px;
+    border-radius: var(--radius-medium);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.4), 0 1px 1px rgba(255, 255, 255, 0.05);
+    color: var(--text-secondary);
+}
+
+.about-section {
+    margin-bottom: 30px;
+}
+
+.about-section h1,
+.about-section h2 {
+    color: var(--accent-color);
+    font-family: var(--font-display);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.about-section p {
+    line-height: 1.7;
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
+.about-section a {
+    color: var(--accent-color);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.about-section a:hover {
+    text-decoration: underline;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.feature-item {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    border-radius: var(--radius-small);
+    border: 1px solid var(--border-color);
+}
+
+.feature-item h3 {
+    color: var(--text-light);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.feature-item p {
+    font-size: 0.9rem;
+    margin-bottom: 0;
+}
+
+.feature-item h3 i {
+    font-size: 1.2em; /* Ensure icons in feature items are consistently sized */
+}

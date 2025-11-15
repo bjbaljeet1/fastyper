@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Practice - Fastyper Finger Drills</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+     <link rel="icon" type="image/png" href="media/logo.png">
+    <meta name="description" content="Improve your typing speed and accuracy with Fastyper's structured typing practice. Our finger drills build muscle memory from the home row up.">
+    <meta name="keywords" content="typing practice, learn to type, typing exercises, finger drills, touch typing practice, improve typing speed, typing accuracy, Fastyper">
+    <meta name="author" content="Fastyper"> 
+    <meta property="og:title" content="Fastyper- Train your fingers">
+    <meta property="og:description" content="Practice your typing skills with Fastyper's Fingers Train. Improve accuracy and speed through targeted exercises.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://fastyper.com/FingerTrain.html">
+    <meta property="og:image" content="https://fastyper.com/media/logo.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Fastyper- Finger Train">
+    <meta name="twitter:description" content="Practice your typing skills with Fastyper's Finger Train. Improve accuracy and speed through targeted exercises.">
+    <meta name="twitter:image" content="https://fastyper.com/media/logo.png">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#1a1a1a">
+    <meta name="google-adsense-account" content="ca-pub-2117663743397755">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2117663743397755"
+     crossorigin="anonymous"></script>
+    <!-- Google tag (gtag.js) - Google Analytics -->
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C32RRG82PM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C32RRG82PM');
+</script>
+    <link rel="canonical" href="https://fastyper.com/typing-practice.html" />
+    <link rel="stylesheet" href="css/findrill.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/style.css"> <!-- Add main stylesheet for consistency -->
+    <style>
+        .main-heading-container {
+            background: linear-gradient(145deg, rgba(0, 20, 40, 0.7), rgba(0, 10, 30, 0.5));
+            border: 1px solid var(--border-color, rgba(0, 204, 255, 0.3));
+            border-bottom: 3px solid rgba(0, 0, 0, 0.4);
+            border-radius: var(--radius-medium, 10px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3), inset 0 1px 2px rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            overflow: hidden; /* To contain the animation */
+        }
+        .main-heading-container h1 {
+            font-size: 1.5rem;
+            color: var(--text-light, #f0f0f0);
+            margin-bottom: 0.5rem;
+            font-family: 'Orbitron', sans-serif;
+            display: inline-block;
+            position: relative;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 3px solid var(--accent-color, #00ccff);
+            animation: 
+                typing 3.5s steps(28, end) infinite,
+                blink-caret .75s step-end infinite;
+        }
+        .main-heading-container p {
+            font-size: 0.9rem;
+            color: var(--text-secondary, #a0a0a0);
+            opacity: 0;
+            animation: fadeInText 1s ease-out 1s forwards;
+        }
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: var(--accent-color, #00ccff); }
+        }
+        @keyframes fadeInText {
+            to { opacity: 1; }
+        }
+    </style>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        .tip-of-the-day {
+            background: linear-gradient(145deg, rgba(0, 40, 70, 0.6), rgba(0, 20, 40, 0.6));
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-medium);
+            padding: 15px;
+            margin-bottom: 20px;
+            text-align: center;
+            box-shadow: 0 0 15px var(--shadow-color);
+            opacity: 0; /* Start hidden */
+            animation: fadeIn 0.8s ease-out 0.5s forwards; /* Fade in with a 0.5s delay */
+        }
+        .tip-of-the-day h3 {
+            color: var(--accent-color);
+            margin-bottom: 10px;
+            font-family: var(--font-display);
+        }
+        .tip-of-the-day p { font-size: 0.95rem; line-height: 1.6; }
+        .typing-tips-container {
+            width: 98%;
+            margin: 15px auto;
+            padding: 20px;
+            background: linear-gradient(145deg, rgba(0, 10, 20, 0.5), rgba(0, 40, 70, 0.5));
+            border-radius: var(--radius-medium);
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.4), 0 1px 1px rgba(255, 255, 255, 0.05);
+            color: var(--text-secondary);
+        }
+        .typing-tips-container h2 {
+            color: var(--accent-color);
+            font-family: var(--font-display);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+        .typing-tips-container h2 i {
+            margin-right: 10px;
+        }
+        .tips-content {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .tips-list, .benefits-list {
+            flex: 1;
+            min-width: 300px;
+        }
+        .tips-content h3 {
+            color: var(--text-light);
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+        .tips-content ul {
+            list-style-position: inside;
+            padding-left: 5px;
+        }
+        .tips-content li {
+            margin-bottom: 8px;
+            line-height: 1.5;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ================= HEADER ================= -->
+ <header role="banner"></header>
+    <!-- Main Content -->
+
+    <main class="main-container" role="main">
+        <div class="left-panel">
+             <section class="stats-container" aria-label="Current Statistics">
+                <div class="stat">
+                    <div class="stat-label">Level</div>
+                    <div class="stat-value" id="lessonNumber">1/10</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-label">Phase</div>
+                    <div class="stat-value" id="patternNumber">1/21</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-label">Accuracy</div>
+                    <div class="stat-value" id="accuracy">0%</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-label">Progress</div>
+                    <div class="stat-value" id="progress">0%</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-label">WPM</div>
+                    <div class="stat-value" id="wpm">0</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-label">Errors</div>
+                    <div class="stat-value" id="errors">0</div>
+                </div>
+                <div class="overall-progress-container">
+                    <div class="progress-bar-label">Total Progress</div>
+                    <div class="progress-bar-bg">
+                        <div id="overallProgressBar" class="progress-bar-fill" style="transition: width 0.5s ease-in-out;"></div>
+                    </div>
+                    <div id="overallProgressText" class="progress-bar-text">0%</div>
+                </div>
+            </section>
+            
+            <section class="mission-row" aria-label="Current Mission">
+                <div class="mission-info">
+                    <i class="fas fa-crosshairs"></i> MISSION: <span id="lessonFocus">Home Row Basics</span>
+                </div>
+                <div class="pattern-info">
+                    <i class="fas fa-code"></i> SEQUENCE: <span id="patternInfo">Basic home row practice</span>
+                </div>
+            </section>
+            
+            <section class="lesson-selector" id="lessonSelector" aria-label="Lesson Selector">
+                <!-- Lesson buttons will be generated by JavaScript -->
+            </section>
+
+            <button class="btn reset-all-btn" id="resetAllProgressBtn">
+                <i class="fas fa-bomb"></i> Reset All Progress
+            </button>
+
+            <section class="settings-panel">
+                <h4><i class="fas fa-cogs"></i> Settings</h4>
+                <div class="setting-item">
+                    <label for="toggleFingerColors">Finger Colors</label>
+                    <label class="switch">
+                        <input type="checkbox" id="toggleFingerColors">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+            </section>
+
+        </div>
+        <div class="right-panel">
+            <div class="main-heading-container">
+                <h1>Structured Typing Practice</h1>
+                <p>Build a strong foundation with exercises designed to perfect your accuracy. Speed will follow.</p>
+            </div>
+             <section class="typing-container" aria-label="Typing Practice Area">
+                 <div class="error-notification" id="errorNotification"></div>
+                <p class="typing-instruction">
+                    <i class="fas fa-eye"></i> Keep your eyes on the screen's keyboard, not on your hands. Trust your fingers!
+                </p>
+                <div class="bjBox"></div>
+               <div class="completion-message" id="completionMessage">
+                    <h3><i class="fas fa-trophy"></i> PATTERN COMPLETED!</h3>
+                    <p>Next pattern in <span id="countdown">3</span> seconds</p>
+                </div>
+                
+               <div class="level-unlocked-modal" id="levelUnlockedModal">
+                   <div class="level-unlocked-content">
+                       <i class="fas fa-star star-icon"></i>
+                       <h2>LEVEL UNLOCKED!</h2>
+                       <p>Get ready for the next challenge in <span id="levelUnlockedCountdown">5</span>...</p>
+                       <button class="btn" id="skipLevelUnlockBtn">Skip <i class="fas fa-forward"></i></button>
+                   </div>
+               </div>
+               <div class="virtual_keyboard">
+    <div class="row">
+        <button class="key finger-left-pinky" data-key="`">`</button>
+        <button class="key finger-left-pinky" data-key="1">1</button>
+        <button class="key finger-left-ring" data-key="2">2</button>
+        <button class="key finger-left-middle" data-key="3">3</button>
+        <button class="key finger-left-index" data-key="4">4</button>
+        <button class="key finger-left-index" data-key="5">5</button>
+        <button class="key finger-right-index" data-key="6">6</button>
+        <button class="key finger-right-index" data-key="7">7</button>
+        <button class="key finger-right-middle" data-key="8">8</button>
+        <button class="key finger-right-ring" data-key="9">9</button>
+        <button class="key finger-right-pinky" data-key="0">0</button>
+        <button class="key finger-right-pinky" data-key="-">-</button>
+        <button class="key finger-right-pinky" data-key="=">=</button>
+        <button class="key special-key extra-wide-key finger-right-pinky" data-key="Backspace">
+            <i class="fas fa-backspace"></i>
+        </button>
+    </div>
+
+    <div class="row">
+        <button class="key special-key wide-key finger-left-pinky" data-key="Tab">Tab</button>
+        <button class="key finger-left-pinky" data-key="q">Q</button>
+        <button class="key finger-left-ring" data-key="w">W</button>
+        <button class="key finger-left-middle" data-key="e">E</button>
+        <button class="key finger-left-index" data-key="r">R</button>
+        <button class="key finger-left-index" data-key="t">T</button>
+        <button class="key finger-right-index" data-key="y">Y</button>
+        <button class="key finger-right-index" data-key="u">U</button>
+        <button class="key finger-right-middle" data-key="i">I</button>
+        <button class="key finger-right-ring" data-key="o">O</button>
+        <button class="key finger-right-pinky" data-key="p">P</button>
+        <button class="key finger-right-pinky" data-key="[">[</button>
+        <button class="key finger-right-pinky" data-key="]">]</button>
+        <button class="key finger-right-pinky" data-key="\">\</button>
+    </div>
+
+    <div class="row">
+        <button class="key special-key wide-key finger-left-pinky" data-key="CapsLock">Caps</button>
+        <button class="key finger-left-pinky" data-key="a">A</button>
+        <button class="key finger-left-ring" data-key="s">S</button>
+        <button class="key finger-left-middle" data-key="d">D</button>
+        <button class="key finger-left-index" data-key="f">F</button>
+        <button class="key finger-left-index" data-key="g">G</button>
+        <button class="key finger-right-index" data-key="h">H</button>
+        <button class="key finger-right-index" data-key="j">J</button>
+        <button class="key finger-right-middle" data-key="k">K</button>
+        <button class="key finger-right-ring" data-key="l">L</button>
+        <button class="key finger-right-pinky" data-key=";">;</button>
+        <button class="key finger-right-pinky" data-key="'">'</button>
+        <button class="key special-key wide-key finger-right-pinky" data-key="Enter">Enter</button>
+    </div>
+
+    <div class="row">
+        <button class="key wide-key finger-left-pinky" data-key="Shift" data-side="left">Shift</button>
+        <button class="key finger-left-pinky" data-key="z">Z</button>
+        <button class="key finger-left-ring" data-key="x">X</button>
+        <button class="key finger-left-middle" data-key="c">C</button>
+        <button class="key finger-left-index" data-key="v">V</button>
+        <button class="key finger-left-index" data-key="b">B</button>
+        <button class="key finger-right-index" data-key="n">N</button>
+        <button class="key finger-right-index" data-key="m">M</button>
+        <button class="key finger-right-middle" data-key=",">,</button>
+        <button class="key finger-right-ring" data-key=".">.</button>
+        <button class="key finger-right-pinky" data-key="/">/</button>
+        <button class="key wide-key finger-right-pinky" data-key="Shift" data-side="right">Shift</button>
+    </div>
+
+    <div class="row">
+        <button class="key space-key finger-thumb" data-key=" ">Space</button>
+    </div>
+</div>
+
+<div class="finger-legend" id="fingerLegend">
+    <h4 id="legendHeader">
+        <span><i class="fas fa-palette"></i> Finger Position Legend</span>
+        <i class="fas fa-chevron-up legend-toggle-icon"></i>
+    </h4>
+    <div class="legend-body">
+        <div class="legend-item">
+            <span class="legend-color" style="background: linear-gradient(to bottom, #E57373, #D32F2F);"></span> Pinky
+        </div>
+        <div class="legend-item">
+            <span class="legend-color" style="background: linear-gradient(to bottom, #FFB74D, #F57C00);"></span> Ring
+        </div>
+        <div class="legend-item">
+            <span class="legend-color" style="background: linear-gradient(to bottom, #81C784, #388E3C);"></span> Middle
+        </div>
+        <div class="legend-item">
+            <span class="legend-color" style="background: linear-gradient(to bottom, #64B5F6, #1976D2);"></span> Index
+        </div>
+        <div class="legend-item">
+            <span class="legend-color" style="background: linear-gradient(to bottom, #BA68C8, #7B1FA2);"></span> Thumb
+        </div>
+    </div>
+</div>
+  <div class="controlss">
+                    <button class="btn" id="prevLesson"><i class="fas fa-arrow-left"></i> PREV</button>
+                    <button class="btn" id="resetLesson"><i class="fas fa-sync-alt"></i> RESTART</button>
+                    <button class="btn" id="nextLesson">NEXT <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <section class="typing-tips-container" aria-labelledby="typing-tips-heading">
+        <h2 id="typing-tips-heading"><i class="fas fa-lightbulb"></i> Pro Typing Tips &amp; Benefits</h2>
+        <div class="tip-of-the-day">
+            <h3><i class="fas fa-star"></i> Tip of the Day</h3>
+            <p id="tipOfTheDayContent">Loading tip...</p>
+        </div>
+        <div class="tips-content">
+            <div class="tips-list">
+                <h3>Tips to Boost Your Speed</h3>
+                <ul>
+                    <li><strong>Master Touch Typing:</strong> Keep your eyes on the screen, not your fingers. This is the golden rule.</li>
+                    <li><strong>Maintain Good Posture:</strong> Sit up straight with your feet flat on the floor. It reduces fatigue and improves focus.</li>
+                    <li><strong>Use All Your Fingers:</strong> Learn the correct finger placement for each key. Our finger legend helps!</li>
+                    <li><strong>Practice Consistently:</strong> Just 15-30 minutes of focused practice daily yields significant results.</li>
+                    <li><strong>Focus on Accuracy First:</strong> Speed will naturally follow accuracy. Don't rush and build bad habits.</li>
+                </ul>
+            </div>
+            <div class="benefits-list">
+                <h3>Benefits of Faster Typing</h3>
+                <ul>
+                    <li><strong>Increased Productivity:</strong> Spend less time typing and more time thinking and creating.</li>
+                    <li><strong>Better Job Prospects:</strong> Many modern jobs value or require efficient typing skills.</li>
+                    <li><strong>Improved Focus:</strong> When you can type without thinking, your mind is free to concentrate on your ideas.</li>
+                    <li><strong>Reduced Strain:</strong> Proper technique reduces the risk of Repetitive Strain Injury (RSI).</li>
+                    <li><strong>Enhanced Communication:</strong> Respond faster in chats, emails, and online collaborations.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer Section -->
+    <footer class="footer" role="contentinfo"></footer>
+    
+    <!-- Audio for level unlock -->
+    <audio id="levelUnlockSound" src="media/level-unlocked.mp3" preload="auto"></audio>
+    <script src="fastscript/fing.js"></script>
+    <script src="fastscript/connection.js"></script>
+    <script src="fastscript/fingermob.js"></script>
+    <script src="fastscript/common.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fastyper - Tutorial</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="media/logo.png">
+    <meta name="description" content="Learn how to use Fastyper with our step-by-step tutorial. Master all the features to improve your typing speed and accuracy.">
+    <meta name="keywords" content="typing tutorial, fastyper guide, how to use fastyper, typing help, typing guide">
+    <meta name="author" content="Fastyper">
+    <meta property="og:title" content="Fastyper - Tutorial">
+    <meta property="og:description" content="Learn how to use Fastyper with our step-by-step tutorial. Master all the features to improve your typing speed and accuracy.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://fastyper.com/tutorial.html">
+    <meta property="og:image" content="https://fastyper.com/media/logo.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Fastyper - Tutorial">
+    <meta name="twitter:description" content="Learn how to use Fastyper with our step-by-step tutorial. Master all the features to improve your typing speed and accuracy.">
+    <meta name="twitter:image" content="https://fastyper.com/media/logo.png">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#1a1a1a">
+    <meta name="google-adsense-account" content="ca-pub-2117663743397755">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2117663743397755"
+     crossorigin="anonymous"></script>
+    <link rel="canonical" href="https://fastyper.com/tutorial.html" />
+
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C32RRG82PM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C32RRG82PM');
+</script>
+    <!-- Structured Data (Schema.org) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "How to Use Fastyper to Improve Your Typing Speed",
+      "description": "A complete guide to mastering Fastyper's features, from the main typing test and Finger Train mode to pro tips for success.",
+      "step": [
+        {
+          "@type": "HowToSection",
+          "name": "The Main Typing Test (Home Page)",
+          "itemListElement": [
+            {
+              "@type": "HowToStep",
+              "name": "Choose a Difficulty Mode",
+              "text": "Choose between Easy (common words), Medium (more complex words), Hard (random characters), and Ghost Mode (fading words to test rhythm)."
+            },
+            {
+              "@type": "HowToStep",
+              "name": "Adjust the Timer",
+              "text": "Select from quick (30s), standard (60s), or marathon (120s) tests, or adjust the time manually before you start."
+            },
+            {
+              "@type": "HowToStep",
+              "name": "Review Detailed Results",
+              "text": "After each test, you get a comprehensive breakdown of your performance, including WPM, accuracy, character analysis, keystroke timing, and a history chart."
+            }
+          ]
+        },
+        {
+          "@type": "HowToSection",
+          "name": "Building Muscle Memory with Finger Train Mode",
+          "itemListElement": [
+            {
+              "@type": "HowToStep",
+              "name": "Progress Through Structured Levels",
+              "text": "Progress through 10 levels, starting from the home row and gradually combining all keys."
+            },
+            {
+              "@type": "HowToStep",
+              "name": "Focus on Accuracy",
+              "text": "This mode is not timed. The goal is to type each pattern correctly. Speed will naturally follow as your accuracy improves."
+            },
+            {
+              "@type": "HowToStep",
+              "name": "Track Your Progress",
+              "text": "Your progress is saved automatically, so you can pick up where you left off. You can see your overall progress and unlock new levels as you complete them."
+            }
+          ]
+        }
+      ],
+      "totalTime": "PT15M"
+    }
+    </script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/tutorial.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/findrill.css"> <!-- Added for keyboard/box styles -->
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        main {
+            flex: 1;
+            padding: 20px;
+        }
+        /* Styles for the tutorial completion popup */
+        .tutorial-popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.7); /* Start smaller */
+            background: linear-gradient(145deg, var(--bg-gradient-mid), var(--bg-gradient-start));
+            padding: 30px;
+            border-radius: var(--radius-large);
+            border: 2px solid var(--accent-color);
+            box-shadow: 0 0 30px var(--shadow-color);
+            text-align: center;
+            z-index: 1001;
+            color: var(--text-light);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease-out, transform 0.4s cubic-bezier(0.18, 0.89, 0.32, 1.28); /* Smooth pop-in effect */
+        }
+        .tutorial-popup.show {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translate(-50%, -50%) scale(1); /* Scale to full size */
+        }
+        .tutorial-popup h3 {
+            color: var(--accent-color);
+            font-family: var(--font-display);
+            margin-bottom: 15px;
+        }
+        .tutorial-popup p {
+            font-size: 1.1rem;
+            margin: 0;
+        }
+        .tutorial-popup a {
+            color: var(--text-secondary);
+            font-weight: bold;
+        }
+        /* Finger highlight colors */
+        .finger-pinky { color: #E57373; } /* Red */
+        .finger-ring { color: #FFB74D; } /* Orange */
+        .finger-middle { color: #81C784; } /* Green */
+        .finger-index { color: #64B5F6; } /* Blue */
+        .finger-thumb { color: #BA68C8; } /* Purple */
+
+          </style>
+</head>
+<body>
+    <!-- ================= HEADER ================= -->
+    <header role="banner"></header>
+
+    <!-- Main Content -->
+    <main role="main">
+        <div class="tutorial-content">
+            <!-- Completion Popup -->
+            <div id="tutorial-popup" class="tutorial-popup">
+                <h3><i class="fas fa-trophy"></i> Congratulations!</h3>
+                <p id="tutorial-popup-message">You've mastered the home row basics. Now, head to the <a href="typing-practice.html">
+                  Practice</a> page to practice Level 1 & 2!</p>
+            </div>
+
+            <section class="tutorial-step">
+                <h2>Step 1: Mastering the Home Row</h2>
+                <p>The foundation of touch typing is the <strong>Home Row</strong>. 
+                  This is where your fingers will rest by default, allowing you to reach all other keys with minimal movement.
+                   Keeping your fingers on the home row improves speed, accuracy, and reduces strain. 
+                   This step focuses on the primary top row keys: <code>asdf</code> and <code>jkl;</code>.</p>
+
+                <h3>Finger Placement:</h3>
+              
+                <div class="placement-guide">
+                    <div class="hand-section">
+                        <h4><i class="fas fa-hand-paper"></i> Left Hand</h4>
+                        <ul>
+                            <li><strong class="finger-pinky">Pinky Finger:</strong> on the 'A' key</li>
+                            <li><strong class="finger-ring">Ring Finger:</strong> on the 'S' key</li>
+                            <li><strong class="finger-middle">Middle Finger:</strong> on the 'D' key</li>
+                            <li><strong class="finger-index">Index Finger:</strong> on the 'F' key</li>
+                        </ul>
+                    </div>
+                    <div class="hand-section">
+                        <h4><i class="fas fa-hand-paper fa-flip-horizontal"></i> Right Hand</h4>
+                        <ul>
+                            <li><strong class="finger-index">Index Finger:</strong> on the 'J' key</li>
+                            <li><strong class="finger-middle">Middle Finger:</strong> on the 'K' key</li>
+                            <li><strong class="finger-ring">Ring Finger:</strong> on the 'L' key</li>
+                            <li><strong class="finger-pinky">Pinky Finger:</strong> on the ';' (semicolon) key</li>
+                        </ul>
+                    </div>
+                </div>
+                <p>Your <strong class="finger-thumb">thumbs</strong> should rest lightly on the <strong>Space Bar</strong>. 
+                  You'll notice small bumps on the 'F' and 'J' keys; these are guides to help you find the home row without looking.</p>
+                
+                <div class="tutorial-keyboard-container tutorial-home-row">
+                    <div class="bjBox" style="width: auto; padding: 15px 30px; font-size: 1.5rem; letter-spacing: 0.2em;">
+                        <!-- Content will be generated by tutorial.js -->
+                    </div>
+                    <div class="virtual_keyboard tutorial-keyboard" style="width: 80%; max-width: 600px; padding: 10px;">
+                    <div class="row">
+                        <button class="key finger-left-pinky" data-key="a">A</button>
+                        <button class="key finger-left-ring" data-key="s">S</button>
+                        <button class="key finger-left-middle" data-key="d">D</button>
+                        <button class="key finger-left-index" data-key="f">F</button>
+                        <div style="width: 40px;"></div> <!-- Spacer -->
+                        <button class="key finger-right-index" data-key="j">J</button>
+                        <button class="key finger-right-middle" data-key="k">K</button>
+                        <button class="key finger-right-ring" data-key="l">L</button>
+                        <button class="key finger-right-pinky" data-key=";">;</button>
+                        <button class="key special-key" data-key="Backspace" style="min-width: 60px;">
+                            <i class="fas fa-backspace"></i>
+                        </button>
+                    </div>
+                    <div class="row">
+                        <button class="key space-key finger-thumb" data-key=" ">Space</button>
+                    </div>
+                </div>
+            </div>
+                <p>Practice typing the sequence <code>asdf jkl;</code> repeatedly, focusing on accuracy and returning your fingers to the home row after each key press. This will help build muscle memory.</p>
+
+                <p>Ready to practice? Head over to the <a href="typing-practice.html">Practice</a> 
+                  page and start with Level 1 & 2 to build your muscle memory!</p>
+            </section>
+
+            <section class="tutorial-step">
+                <h2>Step 2: Conquering the Top Row</h2>
+                <p>Once you are comfortable with the home row, it's time to reach for the <strong>Top Row</strong>. 
+                  These keys are typed by moving your fingers up from their home row positions.
+                   This step focuses on the primary top row keys: <code>qwer</code> and <code>uiop</code>.</p>
+
+                <h3>Finger Placement:</h3>
+                <div class="placement-guide">
+                    <div class="hand-section">
+                        <h4><i class="fas fa-hand-paper"></i> Left Hand</h4>
+                        <ul>
+                            <li><strong class="finger-pinky">Pinky Finger:</strong> reaches up to the 'Q' key</li>
+                            <li><strong class="finger-ring">Ring Finger:</strong> reaches up to the 'W' key</li>
+                            <li><strong class="finger-middle">Middle Finger:</strong> reaches up to the 'E' key</li>
+                            <li><strong class="finger-index">Index Finger:</strong> reaches up to the 'R' key</li>
+                        </ul>
+                    </div>
+                    <div class="hand-section">
+                        <h4><i class="fas fa-hand-paper fa-flip-horizontal"></i> Right Hand</h4>
+                        <ul>
+                            <li><strong class="finger-index">Index Finger:</strong> reaches up to the 'U' key</li>
+                            <li><strong class="finger-middle">Middle Finger:</strong> reaches up to the 'I' key</li>
+                            <li><strong class="finger-ring">Ring Finger:</strong> reaches up to the 'O' key</li>
+                            <li><strong class="finger-pinky">Pinky Finger:</strong> reaches up to the 'P' key</li>
+                        </ul>
+                    </div>
+                </div>
+                <p>After pressing a top row key, always return your finger immediately to its corresponding home row key.
+                   This is crucial for building speed and accuracy.</p>
+
+                <div class="tutorial-keyboard-container tutorial-top-row">
+                    <div class="bjBox" style="width: auto; padding: 15px 30px; font-size: 1.5rem; letter-spacing: 0.2em;">
+                        <!-- Content will be generated by tutorial.js -->
+                    </div>
+                    <div class="virtual_keyboard tutorial-keyboard" style="width: 80%; max-width: 600px; padding: 10px;">
+                        <div class="row">
+                            <button class="key finger-left-pinky" data-key="q">Q</button>
+                            <button class="key finger-left-ring" data-key="w">W</button>
+                            <button class="key finger-left-middle" data-key="e">E</button>
+                            <button class="key finger-left-index" data-key="r">R</button>
+                            <div style="width: 40px;"></div> <!-- Spacer -->
+                            <button class="key finger-right-index" data-key="u">U</button>
+                            <button class="key finger-right-middle" data-key="i">I</button>
+                            <button class="key finger-right-ring" data-key="o">O</button>
+                            <button class="key finger-right-pinky" data-key="p">P</button>
+                            <button class="key special-key" data-key="Backspace" style="min-width: 60px;"><i class="fas fa-backspace"></i></button>
+                        </div>
+                        <div class="row">
+                            <button class="key space-key finger-thumb" data-key=" ">Space</button>
+                        </div>
+                    </div>
+                </div>
+
+                <p>Ready for the next challenge? Go to the <a href="typing-practice.html">Practice</a> page and select
+                   <strong>Level 2 & 2.1</strong> to practice the top row!</p>
+            </section>
+
+            <section class="tutorial-step">
+                <h2>Step 3: Tackling the Bottom Row</h2>
+                <p>The final primary row is the <strong>Bottom Row</strong>. This row can be tricky, as it requires your fingers to curl downwards. The keys for this step are <code>zxcv</code> and <code>,./</code>.</p>
+
+                <h3>Finger Placement:</h3>
+                <div class="placement-guide">
+                    <div class="hand-section">
+                        <h4><i class="fas fa-hand-paper"></i> Left Hand</h4>
+                        <ul>
+                            <li><strong class="finger-pinky">Pinky Finger:</strong> reaches down to the 'Z' key</li>
+                            <li><strong class="finger-ring">Ring Finger:</strong> reaches down to the 'X' key</li>
+                            <li><strong class="finger-middle">Middle Finger:</strong> reaches down to the 'C' key</li>
+                            <li><strong class="finger-index">Index Finger:</strong> reaches down to the 'V' key</li>
+                        </ul>
+                    </div>
+                    <div class="hand-section">
+                        <h4><i class="fas fa-hand-paper fa-flip-horizontal"></i> Right Hand</h4>
+                        <ul>
+                            <li><strong class="finger-index">Index Finger:</strong> reaches down to the 'M' key</li>
+                            <li><strong class="finger-middle">Middle Finger:</strong> reaches down to the ',' (comma) key</li>
+                            <li><strong class="finger-ring">Ring Finger:</strong> reaches down to the '.' (period) key</li>
+                            <li><strong class="finger-pinky">Pinky Finger:</strong> reaches down to the '/' (slash) key</li>
+                        </ul>
+                    </div>
+                </div>
+                <p>Remember to return your fingers to the home row after each keystroke. This movement builds precision and reinforces good habits.</p>
+
+                <div class="tutorial-keyboard-container tutorial-bottom-row">
+                    <div class="bjBox" style="width: auto; padding: 15px 30px; font-size: 1.5rem; letter-spacing: 0.2em;">
+                        <!-- Content will be generated by tutorial.js -->
+                    </div>
+                    <div class="virtual_keyboard tutorial-keyboard" style="width: 80%; max-width: 600px; padding: 10px;">
+                        <div class="row">
+                            <button class="key finger-left-pinky" data-key="z">Z</button>
+                            <button class="key finger-left-ring" data-key="x">X</button>
+                            <button class="key finger-left-middle" data-key="c">C</button>
+                            <button class="key finger-left-index" data-key="v">V</button>
+                            <div style="width: 40px;"></div> <!-- Spacer -->
+                            <button class="key finger-right-index" data-key="m">M</button>
+                            <button class="key finger-right-middle" data-key=",">,</button>
+                            <button class="key finger-right-ring" data-key=".">.</button>
+                            <button class="key finger-right-pinky" data-key="/">/</button>
+                            <button class="key special-key" data-key="Backspace" style="min-width: 60px;"><i class="fas fa-backspace"></i></button>
+                        </div>
+                        <div class="row">
+                            <button class="key space-key finger-thumb" data-key=" ">Space</button>
+                        </div>
+                    </div>
+                </div>
+
+                <p>Time to practice! Visit the <a href="typing-practice.html">Practice</a> page and choose <strong>Level 3 & 3.1</strong> to master the bottom row.</p>
+            </section>
+
+            <section class="tutorial-step">
+                <h2>Step 4: Putting It All Together</h2>
+                <p>You've practiced each row individually. Now it's time to combine your skills for a comprehensive exercise. This will test your ability to move between the home, top, and bottom rows smoothly.</p>
+                <p>Focus on maintaining your rhythm and accuracy. Remember to always return your fingers to the home row after each keystroke. This is the key to building real typing speed.</p>
+
+                <div class="tutorial-keyboard-container tutorial-all-rows">
+                    <div class="bjBox" style="width: auto; padding: 15px 30px; font-size: 1.5rem; letter-spacing: 0.2em;">
+                        <!-- Content will be generated by tutorial.js -->
+                    </div>
+                    <div class="virtual_keyboard tutorial-keyboard" style="width: 100%; max-width: 900px; padding: 10px;">
+                        <div class="row keyboard-row-top">
+                            <button class="key finger-left-pinky" data-key="`">`</button>
+                            <button class="key finger-left-pinky" data-key="1">1</button>
+                            <button class="key finger-left-ring" data-key="2">2</button>
+                            <button class="key finger-left-middle" data-key="3">3</button>
+                            <button class="key finger-left-index" data-key="4">4</button>
+                            <button class="key finger-left-index" data-key="5">5</button>
+                            <button class="key finger-right-index" data-key="6">6</button>
+                            <button class="key finger-right-index" data-key="7">7</button>
+                            <button class="key finger-right-middle" data-key="8">8</button>
+                            <button class="key finger-right-ring" data-key="9">9</button>
+                            <button class="key finger-right-pinky" data-key="0">0</button>
+                            <button class="key finger-right-pinky" data-key="-">-</button>
+                            <button class="key finger-right-pinky" data-key="=">=</button>
+                            <button class="key special-key extra-wide-key" data-key="Backspace"><i class="fas fa-backspace"></i></button>
+                        </div>
+                        <div class="row keyboard-row-top">
+                            <button class="key finger-left-pinky" data-key="q">Q</button>
+                            <button class="key finger-left-ring" data-key="w">W</button>
+                            <button class="key finger-left-middle" data-key="e">E</button>
+                            <button class="key finger-left-index" data-key="r">R</button>
+                            <button class="key finger-left-index" data-key="t">T</button>
+                            <button class="key finger-right-index" data-key="y">Y</button>
+                            <button class="key finger-right-index" data-key="u">U</button>
+                            <button class="key finger-right-middle" data-key="i">I</button>
+                            <button class="key finger-right-ring" data-key="o">O</button>
+                            <button class="key finger-right-pinky" data-key="p">P</button>
+                            <button class="key finger-right-pinky" data-key="[">[</button>
+                            <button class="key finger-right-pinky" data-key="]">]</button>
+                            <button class="key finger-right-pinky" data-key="\">\</button>
+                        </div>
+                        <div class="row keyboard-row-home">
+                            <button class="key finger-left-pinky" data-key="a">A</button>
+                            <button class="key finger-left-ring" data-key="s">S</button>
+                            <button class="key finger-left-middle" data-key="d">D</button>
+                            <button class="key finger-left-index" data-key="f">F</button>
+                            <button class="key finger-left-index" data-key="g">G</button>
+                            <button class="key finger-right-index" data-key="h">H</button>
+                            <button class="key finger-right-index" data-key="j">J</button>
+                            <button class="key finger-right-middle" data-key="k">K</button>
+                            <button class="key finger-right-ring" data-key="l">L</button>
+                            <button class="key finger-right-pinky" data-key=";">;</button>
+                            <button class="key finger-right-pinky" data-key="'">'</button>
+                        </div>
+                        <div class="row keyboard-row-bottom">
+                            <button class="key finger-left-pinky" data-key="z">Z</button>
+                            <button class="key finger-left-ring" data-key="x">X</button>
+                            <button class="key finger-left-middle" data-key="c">C</button>
+                            <button class="key finger-left-index" data-key="v">V</button>
+                            <button class="key finger-left-index" data-key="b">B</button>
+                            <button class="key finger-right-index" data-key="n">N</button>
+                            <button class="key finger-right-index" data-key="m">M</button>
+                            <button class="key finger-right-middle" data-key=",">,</button>
+                            <button class="key finger-right-ring" data-key=".">.</button>
+                            <button class="key finger-right-pinky" data-key="/">/</button>
+                        </div>
+                        <div class="row">
+                            <button class="key space-key finger-thumb" data-key=" ">Space</button>
+                        </div>
+                    </div>
+                </div>
+                <p>Congratulations on completing the tutorial! You now have a solid foundation. Continue practicing on the <a href="typing-practice.html">Practice</a> page or test your speed on the <a href="index.html">main typing test</a>.</p>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="footer" role="contentinfo"></footer>
+
+    <script src="fastscript/common.js"></script>
+    <script src="fastscript/tutorial.js"></script>
+    <script src="fastscript/connection.js"></script>
+</body>
+</html>

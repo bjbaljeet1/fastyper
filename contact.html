@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Fastyper</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="media/logo.png">
+    <meta name="description" content="Get in touch with the Fastyper team. We welcome your feedback, questions, and suggestions.">
+    <meta name="keywords" content="contact fastyper, fastyper support, feedback, typing test contact">
+    <meta name="author" content="Fastyper">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#1a1a1a">
+    <meta name="google-adsense-account" content="ca-pub-2117663743397755">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2117663743397755"
+     crossorigin="anonymous"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-C32RRG82PM"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-C32RRG82PM');
+    </script>
+    <link rel="canonical" href="https://www.fastyper.com/contact.html" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/about.css"> <!-- Reusing 'about.css' for similar styling -->
+</head>
+<body>
+    <!-- ================= HEADER ================= -->
+    <header role="banner"></header>
+
+    <!-- Main Content -->
+    <main role="main" class="about-container">
+        <div class="about-content">
+            <section class="about-section">
+                <h1><i class="fas fa-envelope"></i> Contact Us</h1>
+                <p>We value your feedback and are here to help with any questions you may have. Please feel free to reach out to us through any of the channels below.</p>
+            </section>
+
+            <section class="about-section">
+                <h2><i class="fas fa-paper-plane"></i> General Inquiries & Support</h2>
+                <p>For general questions, feedback, bug reports, or support, the best way to reach us is by email:</p>
+                <div style="text-align: center; font-size: 1.2rem; margin-top: 20px; display: flex; justify-content: center; align-items: center; gap: 15px; flex-wrap: wrap;">
+                    <a href="mailto:fastyper.work@gmail.com" style="color: var(--text-secondary); text-decoration: none; display: inline-flex; align-items: center; gap: 10px;">
+                        <i class="fas fa-envelope"></i>
+                        <span id="emailAddress">fastyper.work@gmail.com</span>
+                    </a>
+                    <button id="copyEmailBtn" title="Copy email to clipboard" style="background: rgba(0,0,0,0.2); border: 1px solid var(--border-color); color: var(--text-secondary); padding: 8px 12px; border-radius: var(--radius-small); cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: all 0.2s ease;">
+                        <i class="far fa-copy"></i>
+                        <span id="copyBtnText">Copy</span>
+                    </button>
+                </div>
+            </section>
+
+            <section class="about-section">
+                <h2><i class="fas fa-share-alt"></i> Connect on Social Media</h2>
+                <p>You can also connect with the developer and the community on social media:</p>
+                <p>Developer: <a href="https://instagram.com/_bal._.jeet_" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 8px;">
+                    <i class="fab fa-instagram"></i>
+                    <span>@_bal._.jeet_ on Instagram</span>
+                </a></p>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="footer" role="contentinfo"></footer>
+
+    <script src="fastscript/common.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const copyButton = document.getElementById('copyEmailBtn');
+            const emailSpan = document.getElementById('emailAddress');
+            const copyBtnText = document.getElementById('copyBtnText');
+            const copyBtnIcon = copyButton.querySelector('i');
+
+            copyButton.addEventListener('click', () => {
+                const email = emailSpan.textContent;
+                navigator.clipboard.writeText(email).then(() => {
+                    // Provide feedback to the user
+                    copyBtnText.textContent = 'Copied!';
+                    copyBtnIcon.classList.remove('fa-copy');
+                    copyBtnIcon.classList.add('fa-check');
+                    
+                    // Revert back after a few seconds
+                    setTimeout(() => {
+                        copyBtnText.textContent = 'Copy';
+                        copyBtnIcon.classList.remove('fa-check');
+                        copyBtnIcon.classList.add('fa-copy');
+                    }, 2000);
+                }).catch(err => {
+                    console.error('Failed to copy email: ', err);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

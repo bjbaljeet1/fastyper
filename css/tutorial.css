@@ -1,0 +1,128 @@
+.tutorial-content {
+    max-width: 900px;
+    margin: 0 auto;
+    background: linear-gradient(145deg, rgba(0, 10, 20, 0.5), rgba(0, 40, 70, 0.5));
+    padding: 20px 30px;
+    border-radius: var(--radius-medium);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.4), 0 1px 1px rgba(255, 255, 255, 0.05);
+    color: var(--text-secondary);
+}
+.bjBox{
+    cursor: pointer;
+}
+.tutorial-keyboard-container {
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.tutorial-keyboard-container.active-focus {
+    border: 2px solid var(--accent-color); /* Highlight border */
+    box-shadow: 0 0 15px var(--accent-color); /* Glow effect */
+}
+.tutorial-step {
+    margin-bottom: 30px;
+}
+.tutorial-step h2 {
+    color: var(--accent-color);
+    font-family: var(--font-display);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+.tutorial-step code {
+    background-color: rgba(0,0,0,0.3);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: var(--font-mono);
+    color: var(--accent-color);
+    border: 1px solid var(--border-color);
+}
+.tutorial-step h3 {
+    color: var(--text-light);
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.tutorial-step p {
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+.tutorial-step ul {
+    list-style-position: inside;
+    padding-left: 10px;
+}
+.tutorial-step li {
+    margin-bottom: 8px;
+}
+.tutorial-step a {
+    color: var(--accent-color);
+    font-weight: bold;
+    text-decoration: none;
+}
+.tutorial-step a:hover {
+    text-decoration: underline;
+}
+.placement-guide {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.hand-section {
+    flex: 1;
+    min-width: 250px;
+}
+.virtual_keyboard.tutorial-keyboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 0;
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto 10px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-small);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.4), 0 1px 1px rgba(255, 255, 255, 0.05);
+    padding: 10px;
+}
+
+/* --- Responsive Styles for Tutorial Keyboard --- */
+
+/* For tablets and smaller desktops */
+@media (max-width: 768px) {
+    .tutorial-keyboard-container .bjBox {
+        font-size: 1.2rem;
+        padding: 10px 20px;
+    }
+}
+
+/* For mobile devices */
+@media (max-width: 480px) {
+    .virtual_keyboard.tutorial-keyboard {
+        width: 100% !important; /* Override inline style for mobile */
+        padding: 5px !important;
+    }
+    .tutorial-keyboard .row {
+        gap: 2px; /* Use gap for consistent spacing */
+    }
+    .tutorial-keyboard .key {
+        min-width: 0; /* Allow keys to shrink */
+        flex-basis: 0; /* Allow flex to control size */
+        flex-grow: 1;
+        height: 35px;
+        font-size: 0.8rem;
+        padding: 2px;
+        margin: 0; /* Remove margin, use gap instead */
+    }
+    .tutorial-keyboard .key.special-key {
+        flex-grow: 1.5; /* Make special keys slightly larger */
+    }
+    .tutorial-keyboard .row > div {
+        width: 10px !important; /* Reduce spacer width on mobile */
+    }
+}
+
+/* Style for highlighting an entire keyboard row */
+.tutorial-keyboard .row.highlight-row {
+    background-color: rgba(0, 204, 255, 0.1);
+    box-shadow: 0 0 10px var(--accent-color);
+    border-radius: var(--radius-small);
+    transition: background-color 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+}
