@@ -22,7 +22,7 @@
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#1a1a1a">
      <meta name="google-adsense-account" content="ca-pub-2117663743397755">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2117663743397755"
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2117663743397755" integrity="sha384-4cUv3BT24o/eI2XwTzC4L2v2aK1C2B60f01OKt4yGg3hZsobe32j2s1Q2a2s1f2g"
      crossorigin="anonymous"></script>
     <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C32RRG82PM"></script>
@@ -175,6 +175,60 @@
             color: var(--error-color, #ff4d4d); /* Optional: change color to red during shake */
         }
 
+        /* High Scores Header */
+        .high-scores-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .high-scores-header h2 {
+            margin: 0; /* Remove default margin from h2 */
+        }
+        .btn-clear {
+            padding: 8px 12px;
+            font-size: 0.8rem;
+            background: linear-gradient(145deg, #c62828, #a31515);
+            border-bottom-color: #800000;
+        }
+        .btn-clear:hover:not(:disabled) {
+            background: linear-gradient(145deg, #e53935, #b71c1c);
+            box-shadow: 0 6px 12px rgba(255, 76, 76, 0.4);
+        }
+
+
+        /* High Scores Table Styles */
+        .high-scores-container {
+            width: 100%;
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background: var(--game-card-bg, rgba(0, 20, 40, 0.6));
+            border-radius: var(--radius-large);
+            border: 1px solid var(--border-color);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+        }
+        #highScoresTable {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+        }
+        #highScoresTable th, #highScoresTable td {
+            padding: 12px 15px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        #highScoresTable th {
+            color: var(--text-secondary);
+            font-family: var(--font-display);
+            letter-spacing: 1px;
+        }
+        #highScoresTable tbody tr:last-child td {
+            border-bottom: none;
+        }
+        #highScoresTable tbody tr:hover {
+            background-color: rgba(0, 204, 255, 0.05);
+        }
+
     </style>
     <style>
         body {
@@ -240,6 +294,27 @@
     </main>
 
     <input type="text" id="game-input" class="game-input" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+
+    <!-- High Scores Section -->
+    <section class="high-scores-container">
+        <div class="high-scores-header">
+            <h2><i class="fas fa-trophy"></i> High Scores</h2>
+            <button id="clearHighScoresBtn" class="btn btn-clear" title="Clear all high scores"><i class="fas fa-trash-alt"></i> Clear Scores</button>
+        </div>
+        <table id="highScoresTable">
+            <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>Score</th>
+                    <th>WPM</th>
+                    <th>Accuracy</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Scores will be populated by JS -->
+            </tbody>
+        </table>
+    </section>
 
     <!-- Footer Section -->
     <footer class="footer" role="contentinfo"></footer>

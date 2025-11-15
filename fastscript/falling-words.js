@@ -13,6 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const totalWordsDisplay = document.getElementById('total-words-display');
     const wpmChartCanvas = document.getElementById('wpm-chart');
     const explosionSound = new Audio('/media/finish.mp3'); // Sound for correct word
+    const clearHighScoresBtn = document.getElementById('clearHighScoresBtn');
+    const highScoresTableBody = document.querySelector('#highScoresTable tbody');
     const correctSound = new Audio('/media/key-press-263640.mp3');
     const incorrectSound = new Audio('/media/wrong-47985.mp3');
 
@@ -91,6 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         updateDisplays();
         initializeChart();
+        displayHighScores();
         overlayTitle.classList.remove('game-over-animated'); // Reset animation class
         
         // Ensure the overlay is visible and shows the initial message
@@ -507,6 +510,7 @@ document.addEventListener('DOMContentLoaded', () => {
         startGameBtnMain.textContent = 'Play Again';
         gameOverlay.classList.remove('hidden');
         gameInput.disabled = true; // Disable input to prevent accidental restart
+        saveAndDisplayScores(score, finalWPM, finalAccuracy);
     }
 
     function handleStart() {
@@ -519,8 +523,66 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    /**
+     * Saves a new score to local storage if it's a high score and updates the display.
+     * @param {number} newScore The final score.
+     * @param {number} newWpm The final WPM.
+     * @param {number} newAccuracy The final accuracy.
+     */
+    function saveAndDisplayScores(newScore, newWpm, newAccuracy) {
+        const highScores = JSON.parse(localStorage.getItem('fallingWordsHighScores')) || [];
+        
+        const scoreEntry = {
+            score: newScore,
+            wpm: newWpm,
+            accuracy: newAccuracy
+        };
+
+        highScores.push(scoreEntry);
+        highScores.sort((a, b) => b.score - a.score); // Sort by score descending
+        const topScores = highScores.slice(0, 5); // Keep only top 5
+
+        localStorage.setItem('fallingWordsHighScores', JSON.stringify(topScores));
+        displayHighScores();
+    }
+
+    /**
+     * Loads high scores from local storage and displays them in the table.
+     */
+    function displayHighScores() {
+        const highScores = JSON.parse(localStorage.getItem('fallingWordsHighScores')) || [];
+        highScoresTableBody.innerHTML = ''; // Clear existing table
+
+        if (highScores.length === 0) {
+            highScoresTableBody.innerHTML = `<tr><td colspan="4">No high scores yet. Play a game to set one!</td></tr>`;
+            return;
+        }
+
+        highScores.forEach((score, index) => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${index + 1}</td>
+                <td>${score.score}</td>
+                <td>${score.wpm}</td>
+                <td>${score.accuracy}%</td>
+            `;
+            highScoresTableBody.appendChild(row);
+        });
+    }
+
+    /**
+     * Clears the high scores from local storage after user confirmation.
+     */
+    function clearHighScores() {
+        if (confirm("Are you sure you want to clear all high scores? This action cannot be undone.")) {
+            localStorage.removeItem('fallingWordsHighScores');
+            displayHighScores(); // Refresh the table to show it's empty
+        }
+    }
+
     // Event Listeners
     startGameBtnMain.addEventListener('click', startGame);
+    clearHighScoresBtn.addEventListener('click', clearHighScores);
 
     document.addEventListener('keydown', (e) => {
         // Handle Ctrl + R for restart
