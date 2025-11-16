@@ -219,32 +219,6 @@
       }
     }
 
-    /* Footer link styles */
-    .footer-links {
-        text-align: center;
-    }
-    .footer-links h4 {
-        color: var(--text-light);
-        margin-bottom: 8px;
-        font-size: 1em;
-    }
-    .footer-links ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        gap: 15px;
-    }
-    .footer-links a {
-        color: var(--text-secondary);
-        text-decoration: none;
-        transition: color 0.2s;
-    }
-    .footer-links a:hover {
-        color: var(--accent-color);
-    }
-
-   
     
     /* ------------------- MAIN CONTENT STYLES ------------------- */
     
