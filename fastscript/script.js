@@ -646,6 +646,11 @@
             timerStarted = true;
 
             document.getElementById("increaseTimer").disabled = true;
+            // AI Feedback Integration: Set test as active
+            if (window.typingAnalysis) {
+                window.typingAnalysis.isTestActive = true;
+            }
+
             document.getElementById("decreaseTimer").disabled = true;
             document.getElementById("easyMode").disabled = true;
             document.getElementById("mediumMode").disabled = true;
@@ -695,6 +700,20 @@
                     accuracyElement.classList.add(animationClass);
                     setTimeout(() => accuracyElement.classList.remove(animationClass), 500);
                 }
+
+                // AI Feedback Integration: Update and trigger AI
+                if (window.typingAnalysis) {
+                    window.typingAnalysis.wpm = currentWPM;
+                    window.typingAnalysis.accuracy = accuracy;
+                    window.typingAnalysis.mistakes = mistakes;
+                    window.typingAnalysis.totalChars = totalTypedChars;
+                    // keyPressTimestamps are pushed in handleKeydown
+
+                    if (window.triggerAIUpdate) {
+                        window.triggerAIUpdate();
+                    }
+                }
+
             }
         }
 
@@ -891,6 +910,12 @@
             if (interval > slowestKeyPress) slowestKeyPress = interval;
         }
         keyTimestamps.push(now);
+        
+        // AI Feedback Integration: Push timestamp
+        if (window.typingAnalysis) {
+            window.typingAnalysis.keyPressTimestamps.push(now);
+        }
+
 
         const spans = document.querySelectorAll(".char");
 
@@ -946,6 +971,16 @@
                     mistakes++;
                     currentWordMistakes++; // Increment mistake counter for current word
                     currentWordCorrect = false;
+                    // AI Feedback Integration: Note mistake time
+                    if (window.typingAnalysis) {
+                        // Track which key was missed
+                        const key = targetChar.toLowerCase();
+                        if (window.typingAnalysis.mistakeMap) {
+                            window.typingAnalysis.mistakeMap[key] = (window.typingAnalysis.mistakeMap[key] || 0) + 1;
+                        }
+                        window.typingAnalysis.lastMistakeTime = Date.now();
+                    }
+
                 if (soundEnabled) {
                         try {
                             incorrectSound.currentTime = 0;
@@ -1076,6 +1111,13 @@
         //---------------------------
         mistakeTracking = initMistakeTracking();
         //---------------------------
+        // AI Feedback Integration: Reset AI state on restart
+        if (window.typingAnalysis) {
+            window.typingAnalysis.isTestActive = false;
+            window.typingAnalysis.keyPressTimestamps = [];
+            window.typingAnalysis.mistakeMap = {};
+            document.dispatchEvent(new CustomEvent('testFinished'));
+        }
 
 
         keyTimestamps = [];

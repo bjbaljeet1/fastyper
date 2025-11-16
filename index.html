@@ -94,53 +94,25 @@
 <style>
     .main-heading-container {
         background: linear-gradient(145deg, rgba(0, 20, 40, 0.7), rgba(0, 10, 30, 0.5));
-        border: 1px solid var(--border-color, rgba(0, 204, 255, 0.3));
-        border-bottom: 3px solid rgba(0, 0, 0, 0.4);
+        border: 1px solid var(--border-color, rgba(0, 204, 255, 0.2));
         border-radius: var(--radius-medium, 10px);
-        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3), inset 0 1px 2px rgba(255, 255, 255, 0.1);
-        padding: 1rem; /* Decreased padding */
-        text-align: center;
-        margin-bottom: 1rem; /* Decreased margin */
-        overflow: hidden; /* To contain the animation */
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        padding: 1rem;
+        margin-bottom: 1rem;
     }
 
     .main-heading-container h1 {
-        font-size: 1.3rem; /* Decreased font size */
-        color: var(--text-light, #f0f0f0);
+        font-size: 1.1rem;
+        color: var(--accent-color, #00ccff);
         margin-bottom: 0.5rem;
-        font-family: 'Orbitron', sans-serif; /* Use a more "tech" font */
-        display: inline-block; /* Required for width animation */
-        position: relative;
-        white-space: nowrap; /* Prevent line breaks during animation */
-        overflow: hidden; /* Hide text until revealed */
-        border-right: 3px solid var(--accent-color, #00ccff); /* The cursor */
-        animation: 
-            typing 4s steps(30, end) infinite,
-            blink-caret .75s step-end infinite;
-    }
-
-    /* Typing effect */
-    @keyframes typing {
-        from { width: 0 }
-        to { width: 100% }
-    }
-
-    /* The typewriter cursor effect */
-    @keyframes blink-caret {
-        from, to { border-color: transparent }
-        50% { border-color: var(--accent-color, #00ccff); }
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
     }
 
     .main-heading-container p {
-        font-size: 0.9rem; /* Decreased font size */
+        font-size: 0.9rem;
         color: var(--text-secondary, #a0a0a0);
-        opacity: 0;
-        animation: fadeInText 1s ease-out 1s forwards; /* Fade in after h1 animation starts */
-    }
-
-    @keyframes fadeInText {
-        from { opacity: 0; transform: translateY(10px); }
-        to { opacity: 1; transform: translateY(0); }
+        line-height: 1.4;
     }
 
     /* Responsive adjustments for mobile screens */
@@ -148,7 +120,33 @@
         .main-heading-container {
             display: none;
         }
+        .ai-feedback-container {
+           display: none;
+        }
     }
+
+    .ai-feedback-container {
+        margin-top: 20px;
+        padding: 15px;
+        background: linear-gradient(145deg, rgba(0, 20, 40, 0.7), rgba(0, 10, 30, 0.5));
+        border: 1px solid var(--border-color, rgba(0, 204, 255, 0.3));
+        border-radius: var(--radius-medium, 10px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .ai-feedback-container h5 {
+        color: var(--accent-color, #00ccff);
+        margin-bottom: 10px;
+        font-size: 1rem;
+        display: flex;
+        align-items: center;
+    }
+
+    .ai-feedback-container p {
+        color: var(--text-secondary, #a0a0a0);
+        font-size: 0.9rem;
+        }
+    
 </style>
 <body>
     <div id="toast" role="status" aria-live="polite"></div>
@@ -222,11 +220,11 @@
             </aside>
         
         <section class="center">
-            <div class="main-heading-container">
-                <h1>The Ultimate Online Typing Test</h1>
-                <p>Challenge your speed, accuracy, and endurance. Start typing the words below to begin!</p>
+            <div class="ai-feedback-container">
+                <h5><i class="fas fa-robot"></i> AI Coach</h5>
+                <p id="aiFeedbackText">Start typing to get live feedback...</p>
             </div>
-            <div class="stringbox" id="stringBox"></div>
+            <div class="stringbox" id="stringBox" style="margin-top: 1rem;"></div>
             <!-----------------------virtual keyboard-------------------->
             <div class="virtual_keyboard" aria-label="Virtual Keyboard">
                 <!-- Keyboard rows remain the same as before -->
@@ -377,6 +375,10 @@
             <button class="button" id="showShortcutsBtn" style="width: 100%; margin-top: 10px;">
                 <i class="fas fa-keyboard"></i> &nbsp; Shortcuts
             </button>
+            <div class="main-heading-container">
+                <h1>The Ultimate Online Typing Test</h1>
+                <p>Challenge your speed, accuracy, and endurance. Start typing the words below to begin!</p>
+            </div>
         </aside>
         
     </main>
@@ -518,6 +520,7 @@
 <script src="fastscript/keyboard.js"></script>
 <script src="fastscript/screenrecorder.js"></script>
 <script src="fastscript/common.js"></script>
+<script src="fastscript/ai-feedback.js"></script>
 <script>
     // This ensures the "How to Use" link is added to the dynamically loaded footer.
     document.addEventListener('footerLoaded', function() {
