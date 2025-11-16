@@ -8,7 +8,8 @@ document.addEventListener("DOMContentLoaded", function() {
         { href: '/games.html', text: 'Games', inHeader: true, inFooter: false },
         { href: '/components/about.html', text: 'About', inHeader: false, inFooter: true },
         { href: '/components/privacy.html', text: 'Privacy', inHeader: false, inFooter: true },
-        { href: '/contact.html', text: 'Contact', inHeader: false, inFooter: true }
+        { href: '/contact.html', text: 'Contact', inHeader: false, inFooter: true },
+        {href:'/blogs.html', text:'Blogs', inHeader:true, inFooter:true}
     ];
 
     // Function to generate header navigation

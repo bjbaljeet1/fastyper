@@ -537,5 +537,16 @@
             }
         }
     });
+
+    // This ensures the "Blogs" link is added to the dynamically loaded header.
+    document.addEventListener('headerLoaded', function() {
+        const navLinksList = document.querySelector('header nav ul');
+        if (navLinksList) {
+            const blogLinkItem = document.createElement('li');
+            blogLinkItem.innerHTML = `<a href="blogs.html" title="Fastyper Blogs">Blogs</a>`;
+            // Append it to the end of the navigation list.
+            navLinksList.appendChild(blogLinkItem);
+        }
+    });
 </script>
 </html>

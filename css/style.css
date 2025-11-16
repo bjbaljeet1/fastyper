@@ -177,11 +177,11 @@
         }
         .nav-btn {
             padding: 8px 15px;
-            font-size: 0.9rem;
+            font-size: 0.7rem;
         }
     }
     /* Mobile Responsive */
-    @media (max-width: 850px) {
+    @media (max-width: 900px) {
       header, .hamburger.open + .nav-links {
         flex-wrap: nowrap;
       }
