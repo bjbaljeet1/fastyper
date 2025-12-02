@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en">
 <head>
     <!-- Content Security Policy to enhance security by restricting resource loading -->
     <meta http-equiv="Content-Security-Policy" content="
@@ -115,13 +115,19 @@
         .blog-post-link:hover .read-more i {
             transform: translateX(5px);
         }
+        /* Accessibility: Add focus state for keyboard navigation */
+        .blog-post-link:focus-visible {
+            outline: 2px solid var(--accent-color, #00ccff);
+            outline-offset: 3px;
+            border-radius: var(--radius-medium, 10px);
+        }
     </style>
 </head>
 <body>
     <!-- ================= HEADER ================= -->
-    <header role="banner"></header>
+    <header></header>
 
-    <main class="container" role="main">
+    <main class="container">
         <div class="blog-header">
             <h1>Fastyper Blog</h1>
             <p>Tips, tricks, and news to help you become a faster typist.</p>
@@ -130,7 +136,7 @@
         <a href="best-typing-websites.html" class="blog-post-link">
             <article class="blog-post">
                 <div class="blog-post-header">
-                    <span class="blog-post-date">Septemeber 1, 2025</span>
+                    <span class="blog-post-date">September 17, 2025</span>
                     <h2>✨ Best Typing Test Websites in 2025 (Top 10 List)</h2>
                 </div>
                 <p>Discover the ultimate list of the top 10 best typing test websites for 2025. Whether for exams, coding, or fun, find the perfect platform to improve your typing speed and accuracy.</p>
@@ -145,7 +151,7 @@
     </main>
 
     <!-- ================= FOOTER ================= -->
-    <footer class="footer" role="contentinfo"></footer>
+    <footer class="footer"></footer>
 
     <script src="fastscript/common.js"></script>
 </body>

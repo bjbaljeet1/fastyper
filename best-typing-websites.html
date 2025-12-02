@@ -135,6 +135,18 @@
             font-size: 1.1rem;
             margin-bottom: 1.5rem;
         }
+        /* Accessibility: Visually hidden text for screen readers */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
         .content-container article{
             width: 100%;
             border-radius: var(--radius-small);
@@ -183,7 +195,7 @@
 </head>
 <body>
 
-    <header role="banner"></header>
+    <header></header>
 
     <main class="content-container">
         <article>
@@ -195,9 +207,9 @@
 
             <section>
                 <h2>1. Fastyper.com – Best for Modern Interface and Performance</h2>
-                <p class="website-link"><strong>Website:</strong> <a href="https://www.fastyper.com" target="_blank" rel="noopener noreferrer">fastyper.com</a></p>
+                <p class="website-link"><strong>Website:</strong> <a href="https://www.fastyper.com" target="_blank" rel="noopener noreferrer">fastyper.com<span class="sr-only">(opens in a new tab)</span></a></p>
                 <div class="blog-img">
-                 <a href="https://www.fastyper.com"><img src="media/fastyper.png" alt="Fastyper.com typing test interface"></a>   
+                 <a href="https://www.fastyper.com"><img src="media/fastyper.png" alt="Fastyper.com typing test interface showing a modern design and real-time WPM stats."></a>   
                 </div>
                 <p>Fastyper stands out with its sleek, modern user interface and exceptionally fast performance. It provides an engaging and distraction-free environment ideal for users who value both aesthetics and functionality.</p>
                 <h3>Key Features</h3>
@@ -215,9 +227,9 @@
 
             <section>
                 <h2>2. MonkeyType – Best for Customization and Analytics</h2>
-                <p class="website-link"><strong>Website:</strong> <a href="https://monkeytype.com/" target="_blank" rel="noopener noreferrer">MonkeyType.com</a></p>
+                <p class="website-link"><strong>Website:</strong> <a href="https://monkeytype.com/" target="_blank" rel="noopener noreferrer">MonkeyType.com<span class="sr-only">(opens in a new tab)</span></a></p>
                 <div class="blog-img">
-                 <a href="https://monkeytype.com/"><img src="media/monkeytype.png" alt="MonkeyType typing test interface showing customization options"></a>   
+                 <a href="https://monkeytype.com/"><img src="media/monkeytype.png" alt="MonkeyType typing test interface showing its minimalist design and various customization options."></a>   
                 </div>
                 <p>MonkeyType remains a favorite among programmers and typing enthusiasts.</p>
                 <h3>Highlights</h3>
@@ -233,9 +245,9 @@
 
             <section>
                 <h2>3. Typing.com – Best for Structured Learning</h2>
-                <p class="website-link"><strong>Website:</strong> <a href="https://www.typing.com/" target="_blank" rel="noopener noreferrer">Typing.com</a></p>
+                <p class="website-link"><strong>Website:</strong> <a href="https://www.typing.com/" target="_blank" rel="noopener noreferrer">Typing.com<span class="sr-only">(opens in a new tab)</span></a></p>
                <div class="blog-img">
-                 <a href="https://www.typing.com/"><img src="media/typing.png" alt="Typing.com dashboard with lessons and tests"></a>   
+                 <a href="https://www.typing.com/"><img src="media/typing.png" alt="Typing.com dashboard displaying structured lessons, tests, and progress tracking for students."></a>   
                 </div>
                 <p>Typing.com has been a legend for years, especially in schools.</p>
                 <h3>Highlights</h3>
@@ -251,9 +263,9 @@
 
             <section>
                 <h2>4. Keybr – Best for Adaptive Learning</h2>
-                <p class="website-link"><strong>Website:</strong> <a href="https://www.keybr.com/" target="_blank" rel="noopener noreferrer">Keybr.com</a></p>
+                <p class="website-link"><strong>Website:</strong> <a href="https://www.keybr.com/" target="_blank" rel="noopener noreferrer">Keybr.com<span class="sr-only">(opens in a new tab)</span></a></p>
                 <div class="blog-img">
-                    <a href="https://www.keybr.com/"><img src="media/keybr.png" alt="Keybr.com adaptive typing lesson interface"></a>
+                    <a href="https://www.keybr.com/"><img src="media/keybr.png" alt="Keybr.com adaptive typing lesson interface showing AI-generated words and a finger heatmap."></a>
                 </div>
                 <p>Keybr uses AI to detect your weaknesses and generate personalized lessons.</p>
                 <h3>Highlights</h3>
@@ -268,9 +280,9 @@
 
             <section>
                 <h2>5. 10FastFingers – Best for Competitive Typing</h2>
-                <p class="website-link"><strong>Website:</strong> <a href="https://10fastfingers.com/" target="_blank" rel="noopener noreferrer">10FastFingers.com</a></p>
+                <p class="website-link"><strong>Website:</strong> <a href="https://10fastfingers.com/" target="_blank" rel="noopener noreferrer">10FastFingers.com<span class="sr-only">(opens in a new tab)</span></a></p>
                 <div class="blog-img">
-                 <a href="https://10fastfingers.com/"><img src="media/10fastfingers.png" alt="10FastFingers typing competition screen"></a>   
+                 <a href="https://10fastfingers.com/"><img src="media/10fastfingers.png" alt="10FastFingers typing competition screen showing a one-minute test with a global leaderboard."></a>   
                 </div>
                 <p>A classic website known for viral typing competitions.</p>
                 <h3>Highlights</h3>
@@ -285,9 +297,9 @@
 
             <section>
                 <h2>6. NitroType – Best for Gamified Practice</h2>
-                <p class="website-link"><strong>Website:</strong> <a href="https://www.nitrotype.com/" target="_blank" rel="noopener noreferrer">NitroType.com</a></p>
+                <p class="website-link"><strong>Website:</strong> <a href="https://www.nitrotype.com/" target="_blank" rel="noopener noreferrer">NitroType.com<span class="sr-only">(opens in a new tab)</span></a></p>
                 <div class="blog-img">
-                 <a href="https://www.nitrotype.com/"><img src="media/nitrotype.png" alt="NitroType racing game where typing fuels the car"></a>   
+                 <a href="https://www.nitrotype.com/"><img src="media/nitrotype.png" alt="NitroType racing game where typing speed fuels a virtual car to compete against others."></a>   
                 </div>
                 <p>NitroType turns typing practice into a fun and competitive racing game.</p>
                 <h3>Key Features</h3>
@@ -302,9 +314,9 @@
 
             <section>
                 <h2>7. Ratatype – Best for Typing Certificates</h2>
-                <p class="website-link"><strong>Website:</strong> <a href="https://www.ratatype.com/" target="_blank" rel="noopener noreferrer">Ratatype.com</a></p>
+                <p class="website-link"><strong>Website:</strong> <a href="https://www.ratatype.com/" target="_blank" rel="noopener noreferrer">Ratatype.com<span class="sr-only">(opens in a new tab)</span></a></p>
                 <div class="blog-img">
-                 <a href="https://www.ratatype.com/"><img src="media/ratatyping.png" alt="Ratatype website showing a typing certificate"></a>   
+                 <a href="https://www.ratatype.com/"><img src="media/ratatyping.png" alt="Ratatype website displaying a professional-looking typing certificate for resume purposes."></a>   
                 </div>
                 <p>Ratatype is great if you want an official typing certificate.</p>
                 <h3>Highlights</h3>
@@ -319,9 +331,9 @@
 
             <section>
                 <h2>8. TypeTest.io – Best for Simplicity</h2>
-                <p class="website-link"><strong>Website:</strong> <a href="https://typetest.io/" target="_blank" rel="noopener noreferrer">TypeTest.io</a></p>
+                <p class="website-link"><strong>Website:</strong> <a href="https://typetest.io/" target="_blank" rel="noopener noreferrer">TypeTest.io<span class="sr-only">(opens in a new tab)</span></a></p>
                 <div class="blog-img">
-                 <a href="https://typetest.io/"><img src="media/typetest.png" alt="TypeTest.io minimalist typing test interface"></a>   
+                 <a href="https://typetest.io/"><img src="media/typetest.png" alt="TypeTest.io minimalist typing test interface with a clean and simple design."></a>   
                 </div>
                 <p>Great for users who prefer simplicity.</p>
                 <h3>Highlights</h3>
@@ -335,9 +347,9 @@
 
             <section>
                 <h2>9. Typing.academy – Best for Comprehensive Training</h2>
-                <p class="website-link"><strong>Website:</strong> <a href="https://www.typing.academy/" target="_blank" rel="noopener noreferrer">Typing.academy</a></p>
+                <p class="website-link"><strong>Website:</strong> <a href="https://www.typing.academy/" target="_blank" rel="noopener noreferrer">Typing.academy<span class="sr-only">(opens in a new tab)</span></a></p>
                 <div class="blog-img">
-                 <a href="https://www.typing.academy/"><img src="media/typingacademy.png" alt="Typing.academy lesson on finger placement"></a>   
+                 <a href="https://www.typing.academy/"><img src="media/typingacademy.png" alt="Typing.academy lesson showing a keyboard diagram with correct finger placement guides."></a>   
                 </div>
                 <p>A complete typing academy with advanced modules.</p>
                 <h3>Highlights</h3>
@@ -351,9 +363,9 @@
 
             <section>
                 <h2>10. TypingTest.com – The Classic Platform</h2>
-                <p class="website-link"><strong>Website:</strong> <a href="https://www.typingtest.com/" target="_blank" rel="noopener noreferrer">TypingTest.com</a></p>
+                <p class="website-link"><strong>Website:</strong> <a href="https://www.typingtest.com/" target="_blank" rel="noopener noreferrer">TypingTest.com<span class="sr-only">(opens in a new tab)</span></a></p>
                 <div class="blog-img">
-                 <a href="https://www.typingtest.com/"><img src="media/typingtest.png" alt="TypingTest.com classic interface with a typing game"></a></div>
+                 <a href="https://www.typingtest.com/"><img src="media/typingtest.png" alt="TypingTest.com classic interface showing a typing game and skill assessment options."></a></div>
                 <p>A classic from the early days of the internet — still widely used.</p>
                 <h3>Highlights</h3>
                 <ul>
@@ -379,7 +391,7 @@
         </article>
     </main>
 
-    <footer class="footer" role="contentinfo"></footer>
+    <footer class="footer"></footer>
 
     <script src="fastscript/common.js"></script>
 
