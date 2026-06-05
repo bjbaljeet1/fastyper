@@ -19,33 +19,6 @@ FasTyper is a modern and responsive typing speed test application designed to he
 - CSS3
 - JavaScript (ES6)
 
-📸 Screenshots
-
-Add screenshots of your application here.
-
-📂 Project Structure
-
-FasTyper/
-│
-├── index.html
-├── style.css
-├── script.js
-├── assets/
-│   ├── sounds/
-│   └── images/
-└── README.md
-
-🚀 Getting Started
-
-Clone the Repository
-
-git clone https://github.com/your-username/FasTyper.git
-
-Run Locally
-
-1. Download or clone the repository.
-2. Open "index.html" in your browser.
-3. Start practicing your typing skills!
 
 📈 Future Enhancements
 
@@ -65,9 +38,6 @@ Contributions are welcome!
 3. Make your changes.
 4. Submit a Pull Request.
 
-📄 License
-
-This project is licensed under the MIT License.
 
 👨‍💻 Developer
 
